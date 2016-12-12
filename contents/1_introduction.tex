@@ -2,11 +2,12 @@
 
 Scopo di questo lavoro è quello di presentare uno strumento di progettazione architettonica basato su web. Dal punto di vista architetturale, abbiamo introdotto una serverless architecture (vedi citazione [1]). Un’architettura di questo tipo si basa massivamente su servizi di terze parti (typically in the cloud) o su funzioni invocate all’interno di ephemeral containers (may only last for one invocation) per la gestione dello stato e della logica server-side. Questa scelta ci ha permesso di ridurre la complessità dell’infrastruttura.
 In effetti i vantaggi di queste scelte tecniche sono molteplici e variano a seconda del punto di vista che si vuole adottare:
-\begin{itemize}
-\item Punto di vista dell’utente: non vi sono complicate installazioni del sistema o procedure di aggiornamento. Il browser fornisce un ambiente compatibile con diverse macchine e con diversi sistemi operativi
-\item Punto di vista dello sviluppatore: è possibile propagare nuove versioni del software in maniera istantanea verso gli utenti
-\item Punto di vista dello sviluppo: nessuna preoccupazione sulla gestione del carico o dell’uptime in quanto l’applicazione principale gira su client
-\end{itemize}
+\\\\
+\textbf{Punto di vista dell'utente}: non vi sono complicate installazioni del sistema o procedure di aggiornamento. Il browser fornisce un ambiente compatibile con diverse macchine e con diversi sistemi operativi\\
+\\
+\textbf{Punto di vista dello sviluppatore}: è possibile propagare nuove versioni del software in maniera istantanea verso gli utenti\\
+\\
+\textbf{Punto di vista dello sviluppo}: nessuna preoccupazione sulla gestione del carico o dell’uptime in quanto l’applicazione principale gira su client\\\\
 Entrando nel dettaglio del software realizzato, questo strumento di progettazione architettonica si propone di realizzare modelli di edifici attraverso l’introduzione di un’interfaccia semplificata che mira ad evitare complicate interazioni con i modelli tridimensionali cercando invece di rimpiazzarle con interazioni su rappresentazioni bidimensionali simboliche dell’edificio.
 La natura web ci ha permesso inoltre di sperimentare api per la collaborazione tra utenti remoti, che possono così progettare un edificio contemporaneamente su pc diversi.
 Molta cura è stata poi posta nell’espandibilità del sistema, in modo che gli sviluppatori che intendessero offrire questa piattaforma a loro volta potessero personalizzarlo a piacere. A questo fine è stato introdotto un \textbf{catalogo}, sempre basato su un servizio esterno, che potesse fornire oggetti da inserire per la modellazione con delle \textbf{proprietà} specifiche per il tipo di applicazione.

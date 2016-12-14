@@ -23,7 +23,7 @@ La realizzazione del sistema è stata effettuata utilizzando alcune tra le tecno
 Lo sviluppo del progetto si è focalizzato sull'individuazione di una struttura gerarchica in grado di rappresentare in modo esaustivo l’insieme delle componenti che compongono la planimetria, costituendo di fatto lo stato dell’applicazione. Lo stato è stato gestito attraverso l’immutabilit\`a, un principio che prevede l’applicazione di nuove modifiche attraverso la generazione di un nuovo stato, in primis identico al precedente, ma sul quale vengono applicate le modifiche richieste. Dal punto di vista della gestione della memoria questo meccanismo richiederebbe un importante dispendio di risorse. Per evitare ciò l’implementazione ImmutableJS adotta dei meccanismi che simulano il principio di immutabilit\`a evitando la copia in profondit\`a della memoria  (deep clone) e alleggerendo così il carico in termini di utilizzo di memoria e tempo macchina.
 
 
-Per dominare la complessit\`a dell’applicazione l’intero sistema è stato modellato su una macchina a stati. Sfruttando il modello basato su azioni e reducer messo a disposizione dal pattern unidirectional data flow è stato individuato un grafo che rappresenta le possibili evoluzioni dello stato dell’applicazione. Il nodo corrente in cui si trova la macchina a stati è stato mappato attraverso l’introduzione di una variabile globale che rappresenta la modalit\`a in cui si trova l’applicazione, gli eventi del browser sono stati mappati con gli archi uscenti del grafo.Ad esempio un’operazione di creazione di un nuovo muro viene mappata attraverso un grafo composto da 4 nodi.
+Per dominare la complessit\`a dell’applicazione l’intero sistema è stato modellato su una macchina a stati. Sfruttando il modello basato su azioni e reducer messo a disposizione dal pattern unidirectional data flow è stato individuato un grafo che rappresenta le possibili evoluzioni dello stato dell’applicazione. Il nodo corrente in cui si trova la macchina a stati è stato mappato attraverso l’introduzione di una variabile globale che rappresenta la modalit\`a in cui si trova l’applicazione, gli eventi del browser sono stati mappati con gli archi uscenti del grafo.Ad esempio un’operazione di creazione di un nuovo muro viene mappata attraverso un grafo composto da 4 nodi.\newline
 
 \begin{figure}[!t]
 \centering
@@ -31,4 +31,21 @@ Per dominare la complessit\`a dell’applicazione l’intero sistema è stato mo
 
 \caption{Bla bla bla.}
 \label{fig_sim}
+\end{figure}
+
+
+\subsection{Architettura dei visualizzatori}
+
+La struttura di questa applicazione, in linea con quelli che erano gli obiettivi prefissati, permette di essere estesa cambiando i componenti che si occupano della visualizzazione dei modelli. In particolare possiamo evidenziare le seguenti parti:\\\\
+\textbf{Catalogo:} contiene i plugin geometrici del sistema con tutte le loro proprietà.\\\\
+\textbf{Core:} è la parte che si occupa della gestione dello stato e contiene le funzionalità di disegno prendendo le proprietà dal catalogo\\\\
+\textbf{Visualizzatori:} si occupano di fornire una rappresentazione dello stato. La tipologia di visualizzatore viene scelta in base alla mode property inside state.\\\\
+
+Uno schema dell'architettura dei visualizzatori pu\`o essere osservato nella figura~\ref{fig_visualizators}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\linewidth]{contents/images/diagramma-visualizzatori}
+
+\caption{Bla bla bla.}
+\label{fig_visualizators}
 \end{figure}

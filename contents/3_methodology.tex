@@ -42,15 +42,36 @@ La categorizzazione individua un insieme di casi d'uso con cui l'utente pu\`o in
 
 \subsection{UI components}
 
-L'intera applicazione \`e stata pensata in maniera modulare, in modo da poterla estendere in maniera semplice. Dal punto di vista web la tecnologia applicata \`e stata quella dei \textbf{Web Components}. L'idea di base \`e quello di definire l'applicazione frontend come una collezione di componenti, che vengono renderizzati in modo diverso a seconda dei valori assegnati allo stato. In particolare, vi \`e una classe di componenti delegati alla rappresentazione delle propriet\`a dello stato stesso: i \textbf{viewers}. Esempi sono i visualizzatori per il 2D e per il 3D. In generale, la struttura a componenti permette di definire una qualunque visualizzazione dello stato (ad esempio in forma tabellare) semplicemente inserendo un nuovo componente. Una schematizzazione del concetto \`e evidenziata nella figura~\ref{fig_viewers}.\\
+L'intera applicazione \`e stata pensata in maniera modulare, in modo da poterla estendere in maniera semplice. Dal punto di vista web la tecnologia applicata \`e stata quella dei \textbf{Web Components}. Questa tecnologia \`e relativamente recente e si basa su quattro standard w3c: (i) \textbf{HTML templates} (defined in~\cite{Leithead:14:H}), (ii) \textbf{Shadow DOM} (defined in~\cite{9675597}), (iii) \textbf{Custom elelements} (defined in~\cite{6190251}), (iv) \textbf{HTML imports} (defined in~\cite{Glazkov:16:HI}). L'idea di base \`e quello di definire l'applicazione frontend come una collezione di componenti, che vengono renderizzati in modo diverso a seconda dei valori assegnati allo stato. In figura~\ref{fig_ui} abbiamo un esempio di applicazione di questa tecnologia \\
 
-Come possiamo vedere nello schema, siamo in grado di identificare tre macro blocchi. Il primo \`e il catalogo, che come abbiamo visto (CITAZIONE AL PARAGRAFO) contiene tutti i building elements del sistema e le loro properiet\`a. Il secondo \`e il core vero e proprio e si occupa della gestione dello stato e contiene le funzionalit\`a di disegno. Questo comunica con il catalogo prendendo le propriet\`a dei building elements. Infine abbiamo i visualizzatori veri e propri, che vengono scelti in base alla \texttt{mode} property inside the state.\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\linewidth]{contents/images/ui}\\
+\vfill
+\includegraphics[width=0.25\linewidth]{contents/images/toolbar}
+\includegraphics[width=0.25\linewidth]{contents/images/sidebar}
+\includegraphics[width=0.45\linewidth]{contents/images/viewer}
+\caption{The user interface of the application. We can see different components. On the second row: (a) The toolbar (every button is a component). (b) The sidebar (c) The 2D viewer}
+\label{fig_ui}
+\end{figure}
 
-Al momento sono stati implementati i visualizzatori 2D e 3D.\\\\
-\textbf{2D Viewer}. This viewer creates a 2D view of the building model. Dato lo stato globale, \`e in grado di sfruttare il \textbf{Virtual DOM} per aggiornare solo le parti che vengono modificate evitando aggiornamenti globali continui\\\\
-\textbf{3D Viewer}. Sfrutta la libreria di modellazione per WebGL \textbf{ThreeJS} per creare una vista 3D del building model. Per evitare di dover continuamente ricreare l'intero modello quando cambiano porzioni dello stato, \`e stato implementato un sistema di \textit{diff} e \textit{patch} dello stato (usando la libreria \texttt{immutable-js-diff}) che a sua volta si riconduce allo stato citato in~\cite{rfc6902}. In pratica \`e stata creata una struttura parallela che mappa gli oggetti di ThreeJS con i relativi building elements memorizzati nello stato. Ogni volta che viene lanciata un'azione redux, viene calcolata la diff tra il vecchio stato e quello nuovo e si ricreano solo gli oggetti che sono stati modificati. In particolare possiamo avere tre possibili \textit{operations}: (i) \textbf{add}, (ii) \textbf{replace} and (iii) \textbf{remove}. For every operation, viene determinato un diverso tipo di comportamento in base al particolare building element cambiato, coinvolgendo eventualmente building elements correlati
+Entrando nel dettaglio, una classe interessante di componenti che sono delegati alla rappresentazione delle propriet\`a dello stato sono i \textbf{viewers}. Esempi sono i visualizzatori per il 2D e per il 3D. In generale, la struttura a componenti permette di definire una qualunque visualizzazione dello stato (ad esempio in forma tabellare) semplicemente inserendo un nuovo componente. Una schematizzazione del concetto \`e evidenziata nella figura~\ref{fig_viewers}.\\
 
-\begin{figure}[!t]
+Come possiamo vedere nello schema, siamo in grado di identificare tre macro blocchi. Il primo \`e il catalogo, che come abbiamo visto (CITAZIONE AL PARAGRAFO) contiene tutti i building elements del sistema e le loro properiet\`a. Il secondo \`e il core vero e proprio e si occupa della gestione dello stato e contiene le funzionalit\`a di disegno. Questo comunica con il catalogo prendendo le propriet\`a dei building elements. Infine abbiamo i visualizzatori veri e propri, che vengono scelti in base alla \texttt{mode} property inside the state. Al momento sono stati implementati i visualizzatori 2D e 3D.\\\\
+\textbf{2D Viewer}. This viewer creates a 2D view of the building model. Dato lo stato globale, \`e in grado di sfruttare il \textbf{Virtual DOM} (nell'implementazione di ReactJS) per aggiornare solo le parti che vengono modificate evitando aggiornamenti globali continui\\\\
+\textbf{3D Viewer}. Sfrutta la libreria di modellazione per WebGL \textbf{ThreeJS} per creare una vista 3D del building model. Per evitare di dover continuamente ricreare l'intero modello quando cambiano porzioni dello stato, \`e stato implementato un sistema di \textit{diff} e \textit{patch} dello stato (usando la libreria \texttt{immutable-js-diff}) che a sua volta si riconduce allo stato citato in~\cite{rfc6902}. In pratica \`e stata creata una struttura parallela che mappa gli oggetti di ThreeJS con i relativi building elements memorizzati nello stato. Ogni volta che viene lanciata un'azione Redux, viene calcolata la diff tra il vecchio stato e quello nuovo e si ricreano solo gli oggetti che sono stati modificati. In particolare possiamo avere tre possibili \textit{operations}: (i) \textbf{add}, (ii) \textbf{replace} and (iii) \textbf{remove}. For every operation, viene determinato un diverso tipo di comportamento in base al particolare building element cambiato, coinvolgendo eventualmente building elements correlati
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\linewidth]{contents/images/2d-viewer}
+\includegraphics[width=0.45\linewidth]{contents/images/3d-viewer}
+\caption{The 2D and 3D viewers for the state}
+\label{fig_viewer}
+\end{figure}
+
+
+\begin{figure}[htb]
 \centering
 \includegraphics[width=\linewidth]{contents/images/diagramma-visualizzatori}
 

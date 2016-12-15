@@ -58,9 +58,6 @@ Al momento sono stati implementati i visualizzatori 2D e 3D.\\\\
 \label{fig_viewers}
 \end{figure}
 
-\subsubsection{3D renderer component}
-threeJS immutablediff
-
 \subsection{Architettura serverless}
 Una tra le sfide che ha caratterizzato il progetto è l'utilizzo di un approccio serverless. L'intera applicazione viene eseguita all'interno del browser, ottenendo i vantaggi di: evitare all'utilizzatore complicate installazioni del sistema o procedure di aggiornamento; fornire un livello di astrazione tale da rendere l'ambiente compatibile su diverse macchine e su diversi sistemi operativi; abilitare un rilascio di nuove versioni centralizzato, in grado di raggiungere tutti gli utenti contemporanemante; eliminare il punto di concentramento del calcolo in quanto questo rimane confinato sulla macchina dell'utente.
 Per permettere la generazione di elementi architetturali complessi il sistema è in grado inoltre di sfruttare dei worker di tipo FaaS (Function as a Service) demandando l'onerosa generazione delle geometrie 3D necessarie alla visualizzazione.

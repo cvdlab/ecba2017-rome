@@ -8,13 +8,13 @@ Lo sviluppo del progetto si \`e focalizzato sull'individuazione di una struttura
 
 
 \subsubsection{Application as Finite State Machine}
-Per dominare la complessit\`a dell'applicazione l'intero sistema \`e stato modellato su una macchina a stati. Sfruttando il modello basato su azioni e reducer messo a disposizione dal pattern unidirectional data flow \`e stato individuato un grafo che rappresenta le possibili evoluzioni dello stato dell'applicazione. Il nodo corrente in cui si trova la macchina a stati \`e stato mappato attraverso l'introduzione di una variabile globale che rappresenta la modalit\`a in cui si trova l'applicazione, gli eventi del browser sono stati mappati con gli archi uscenti del grafo.Ad esempio un'operazione di creazione di un nuovo muro viene mappata attraverso un grafo composto da 4 nodi.\newline
+Per dominare la complessit\`a dell'applicazione l'intero sistema \`e stato modellato su una macchina a stati. Sfruttando il modello basato su azioni e reducer messo a disposizione dal pattern unidirectional data flow \`e stato individuato un grafo che rappresenta le possibili evoluzioni dello stato dell'applicazione. Ogni nodo corrisponde ad una modalità, ogni arco corrisponde alle possibili azioni che è possibile intraprendere a partire da quel punto. A seconda della modalità gli eventi del browser, come ad esempio \texttt{click} o \texttt{mousemove}, vengono mappati sulle azioni.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\linewidth]{contents/images/uc_draw_wall}
 
-\caption{Bla bla bla.}
+\caption{Sottografo della macchina a stati che rappresenta la creazione di un muro. (i) Nodo \texttt{idle}: modalità d'attesa dell'applicazione. Non è stata ancora intrapresa nessuna operazione. (ii) Nodo \texttt{waiting\_drawing\_wall}: l'utente ha selezionato lo strumento disegno muro, ma non ha ancora iniziato il disegno. (iii) Nodo \texttt{drawing\_wall}: l'utente ha posizionato il punto di inizio del muro.}
 \label{fig_sim}
 \end{figure}
 

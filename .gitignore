@@ -1,3 +1,6 @@
 .idea
 *.aux
 *.log
+*.backup
+*.bbl
+*.blg

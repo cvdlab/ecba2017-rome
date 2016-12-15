@@ -22,15 +22,22 @@ Per dominare la complessit\`a dell’applicazione l’intero sistema è stato mo
 
 
 \subsection{Collaboration}
-    COLLABORAZIONE\\
+    Per permettere all'utente finale di gestire parti di edificio si è introdotto un concetto di layer, un raggruppamento di elementi accomunati da caratteristiche di similarità decise dall'utente. Un esempio potrebbe essere l'intero piano di una palazzina oppure un'area di un edificio. La gestione collaborativa del progetto sfrutta questi layer per permettere a più persone di operare contemporaneamnte grazie a dei lock che abilitano la modifica su layer ad una persona per volta. In questo modo gli utenti possono lavorare contemporaneamente su più layer evitando conflitti a livello di progetto.
+
 
 \subsection{Building elements}
 
-Il catalogo del programma è un insieme, strutturato in categorie, nel quale sono contenuti tutti gli elementi costruttivi che è possibile inserire all’interno della planimetria. L’attribuzione della categoria viene effettuata sulla base delle caratteristiche dell’elemento e determina i casi d’uso permessi all’utente.
-Le categorie sono:\\
-\textbf{Walls}, rientrano in questa categoria tutti i tipi di muro (perimetrali, interni, portanti). La creazione avviene specificando il punto di inizio e fine dell’elemento. La rappresentazione interna dei muri viene ricondotta a quella di un grafo in cui i nodi, che corrispondono ai punti geometrici in cui si intersecano più muri, hanno delle coordinate che li collocano nello spazio e gli archi sono l’area visibile del muro.\\
-\textbf{Openings}, rientrano in questa categoria gli elementi che bucano i muri come porte, finestre e archi. La creazione viene effettuata attraverso uno snap sui muri precedentemente creati. L’utente può agire sulla posizione ed il sistema garantisce che questa venga preservato il legamente con il muro. \\
-\textbf{Areas}, rientrano in questa categoria i pavimenti. La creazione viene effettuata automaticamente attraverso un’analisi della disposizione dei muri. L’algoritmo individuato viene di seguito descritto.\\
+L'insieme degli elementi che è possibile inserire all'interno della planimetria vengono gestiti in un catalogo, strutturato in categorie.
+La categorizzazione individua un insieme di casi d'uso con cui l'utente può interagire.
+
+\textbf{Walls}, rientrano in questa categoria tutti i tipi di muro (perimetrali, interni, portanti). La creazione avviene specificando il punto di inizio e fine dell’elemento. La rappresentazione interna viene ricondotta a quella di un grafo in cui: i \textbf{nodi} corrispondono ai punti geometrici in cui si intersecano più muri e hanno delle coordinate che li collocano nello spazio; gli \textbf{archi} corrispondono al muro.\\
+\textbf{Openings}, rientrano in questa categoria gli elementi che bucano i muri come porte, finestre e archi. La creazione viene effettuata attraverso uno snap sui muri precedentemente creati. La rappresentazione interna associa ciascuna apertura con il muro di riferimento, creando un legame tra le due componenti.\\
+\textbf{Areas}, rientrano in questa categoria i pavimenti. La creazione viene effettuata automaticamente attraverso un’analisi del grafo composto dai muri. L’algoritmo individuato si compone delle seguenti fasi:\\
+    - Ricerca delle componenti biconnesse attraverso l'applicazione dell'algoritmo Hopcroft-Tarjan [Citazione]
+    - Rimozione degli archi che non appartengono alle componenti biconnesse
+    - Applicazione dell'algoritmo di ricerca del bordo per la determinazione dei cicli [Citazione]
+    - Rimozione del ciclo massimale, corrispondente ad un ciclo che coinvolge tutti gli archi perimetrali del grafo attraverso la legge.... [Citazione]
+
 \textbf{Objects}, rientrano in questa categoria tutti gli oggetti posizionabili sulle aree. L’utente può agire sulla disposizione sia in termini di posizione che rotazione.\\
 
 \subsection{UI components}
@@ -55,5 +62,5 @@ Al momento sono stati implementati i visualizzatori 2D e 3D.\\\\
 threeJS immutablediff
 
 \subsection{Architettura serverless}
-    CARICO FRONTEND\\
-    CARICAMENTO REMOTO GEOMETRIA PLUGIN\\
+Una tra le sfide che ha caratterizzato il progetto è l'utilizzo di un approccio serverless. L'intera applicazione viene eseguita all'interno del browser, ottenendo i vantaggi di: evitare all'utilizzatore complicate installazioni del sistema o procedure di aggiornamento; fornire un livello di astrazione tale da rendere l'ambiente compatibile su diverse macchine e su diversi sistemi operativi; abilitare un rilascio di nuove versioni centralizzato, in grado di raggiungere tutti gli utenti contemporanemante; eliminare il punto di concentramento del calcolo in quanto questo rimane confinato sulla macchina dell'utente.
+Per permettere la generazione di elementi architetturali complessi il sistema è in grado inoltre di sfruttare dei worker di tipo FaaS (Function as a Service) demandando l'onerosa generazione delle geometrie 3D necessarie alla visualizzazione.

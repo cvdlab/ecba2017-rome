@@ -33,7 +33,7 @@ La categorizzazione individua un insieme di casi d'uso con cui l'utente pu\`o in
 \textbf{Walls}, rientrano in questa categoria tutti i tipi di muro (perimetrali, interni, portanti). La creazione avviene specificando il punto di inizio e fine dell'elemento. La rappresentazione interna viene ricondotta a quella di un grafo in cui: i \textbf{nodi} corrispondono ai punti geometrici in cui si intersecano pi\`u muri e hanno delle coordinate che li collocano nello spazio; gli \textbf{archi} corrispondono al muro.\\
 \textbf{Openings}, rientrano in questa categoria gli elementi che bucano i muri come porte, finestre e archi. La creazione viene effettuata attraverso uno snap sui muri precedentemente creati. La rappresentazione interna associa ciascuna apertura con il muro di riferimento, creando un legame tra le due componenti.\\
 \textbf{Areas}, rientrano in questa categoria i pavimenti. La creazione viene effettuata automaticamente attraverso un'analisi del grafo composto dai muri. L'algoritmo individuato si compone delle seguenti fasi:\\
-    - Ricerca delle componenti biconnesse attraverso l'applicazione dell'algoritmo Hopcroft-Tarjan [Citazione]
+    - Ricerca delle componenti biconnesse attraverso l'applicazione dell'algoritmo Hopcroft-Tarjan~(vedi \cite{Hopcroft:1973:AEA:362248.362272})
     - Rimozione degli archi che non appartengono alle componenti biconnesse
     - Applicazione dell'algoritmo di ricerca del bordo per la determinazione dei cicli [Citazione]
     - Rimozione del ciclo massimale, corrispondente ad un ciclo che coinvolge tutti gli archi perimetrali del grafo attraverso la legge.... [Citazione]

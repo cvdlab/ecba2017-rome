@@ -1,12 +1,12 @@
 \section{Introduction}
 
-Scopo di questo lavoro \`e quello di presentare uno strumento di progettazione architettonica basato su web. Dal punto di vista architetturale, è stata introdotta una serverless architecture (vedi~\cite{Roberts}). Un'architettura di questo tipo si basa massivamente su servizi di terze parti (typically in the cloud) o su funzioni invocate all'interno di ephemeral containers (may only last for one invocation) per la gestione dello stato e della logica server-side. Questa scelta ha notevoli vantaggi che verranno di seguito presentati.
+Scopo di questo lavoro \`e quello di presentare uno strumento di progettazione architettonica basato su web. Dal punto di vista architetturale, \`e stata introdotta una serverless architecture (vedi~\cite{Roberts}). Un'architettura di questo tipo si basa massivamente su servizi di terze parti (typically in the cloud) o su funzioni invocate all'interno di ephemeral containers (may only last for one invocation) per la gestione dello stato e della logica server-side.
 
-Questo strumento di progettazione architettonica si propone di realizzare modelli di edifici attraverso l'introduzione di un'interfaccia semplificata che mira ad evitare complicate interazioni con i modelli tridimensionali cercando invece di rimpiazzarle con interazioni su rappresentazioni bidimensionali simboliche dell'edificio.
+Questo strumento si propone di realizzare modelli di edifici attraverso l'introduzione di un'interfaccia semplificata che mira ad evitare complicate interazioni con i modelli tridimensionali cercando invece di rimpiazzarle con interazioni su rappresentazioni bidimensionali simboliche dell'edificio.
 
 La natura web ha permesso di sperimentare API per la collaborazione tra utenti remoti, che possono cos\`i progettare un edificio contemporaneamente su pc diversi.
 
-Molta cura \`e stata poi posta sull'espandibilit\`a del sistema, dando agli sviluppatori un elevato livello di personalizzazione. Ciò è possibile: (i) Sfruttando la tecnolgia dei WebComponent per aggiungere nuove funzionalità; (ii) introducendo un \textbf{catalogo} personalizzabile, in grado di fornire elementi architetturali specifici del contesto in cui l'applicazione viene utilizzata; (iii) introducendo un gestore dinamico di metadati, in grado di attribuire informazioni su ogni componente dell'edificio.
+Molta cura \`e stata poi posta sull'espandibilit\`a del sistema, dando agli sviluppatori un elevato livello di personalizzazione. Ci\`o \`e possibile: (i) Sfruttando \textbf{web components pattern} per aggiungere nuove funzionalità; (ii) introducendo un \textbf{catalogo} personalizzabile, in grado di fornire elementi architetturali specifici del contesto in cui l'applicazione viene utilizzata; (iii) introducendo un gestore dinamico di \textbf{metadati}, in grado di attribuire informazioni su ogni componente dell'edificio.
 
 
 Le sezioni che seguono mostrano nel dettaglio i concetti espressi qui, mostrandone la realizzazione e ponendo l'accento sugli aspetti architetturali. (UNA VOLTA COMPLETATO METTERE UN ELENCO PUNTUALE DEL CONTENUTO DELLE SEZIONI)

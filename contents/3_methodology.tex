@@ -21,9 +21,11 @@ Per dominare la complessit\`a dell'applicazione l'intero sistema \`e stato model
 
 
 
-\subsection{Collaboration}
-    Per permettere all'utente finale di gestire parti di edificio si \`e introdotto un concetto di layer, un raggruppamento di elementi accomunati da caratteristiche di similarit\`a decise dall'utente. Un esempio potrebbe essere l'intero piano di una palazzina oppure un'area di un edificio. La gestione collaborativa del progetto sfrutta questi layer per permettere a pi\`u persone di operare contemporaneamnte grazie a dei lock che abilitano la modifica su layer ad una persona per volta. In questo modo gli utenti possono lavorare contemporaneamente su pi\`u layer evitando conflitti a livello di progetto.
+\subsection{Collaboration}  
 
+Diamo ora un cenno sull'architettura scelta per permettere la collaborazione tra utenti diversi nella modellazione dello stesso edificio. In letteratura esistono diverse tecniche per realizzare una piattaforma di collaborazione tra utenti remoti. Un esempio \`e dato da~\cite{Ellis:1989:CCG:66926.66963} dove viene introdotta la tecnologia \textbf{Operational Transformation}. Con questa tecnica un gruppo di nodi si scambia messaggi senza un \textit{punto di controllo centrale} basandosi su due propriet\`a: (i) you can transform changes relative to other changes and (ii) there is no matter in which order concurrent changes are applied, you end up with the same document.\\
+
+Tuttavia, la completa distributivit\`a dell'architettura, nonostante sia molto efficiente, la rende estremamente difficile da implementare e mantenere. Per questa ragione nel progetto \`e stata implementata una tecnica che permette la collaborazione a partire da un singolo nodo che funge da \textbf{master}. Questo mantiene l'intero stato dell'applicazione e comunica i cambiamenti a tutti i nodi che eseguono modifiche. Per essere sicuri che non vi possano essere conflitti tra gli utenti \`e stato introdotto il concetto di \textbf{layer}, un raggruppamento di elementi accomunati da caratteristiche di similarit\`a decise dall'utente. Un esempio potrebbe essere l'intero piano di una palazzina oppure un'area di un edificio. Mettendo un lock sul layer \`e possibile evitare conflitti pur permettendo la gestione collaborativa del progetto.
 
 \subsection{Building elements}\label{building_elements}
 

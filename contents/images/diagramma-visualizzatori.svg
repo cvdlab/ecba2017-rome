@@ -30,12 +30,12 @@
      id="namedview73"
      showgrid="false"
      inkscape:zoom="1.0253627"
-     inkscape:cx="334.47679"
-     inkscape:cy="148.17617"
+     inkscape:cx="411.91249"
+     inkscape:cy="122.55914"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g6" />
+     inkscape:current-layer="switch50-6" />
   <metadata
      id="metadata128">
     <rdf:RDF>
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -573,30 +573,28 @@
            width="145.31444"
            id="rect4265" /></flowRegion><flowPara
          id="flowPara4267">Propertiepproepekwo</flowPara></flowRoot>    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g22-3"
-       transform="translate(86.847433,50.888673)">
+       id="g48-3"
+       transform="translate(70.891745,51.588442)">
       <switch
-         style="stroke:none;stroke-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:miter;fill:#000000;fill-opacity:1"
-         id="switch24-6">
+         id="switch50-6">
         <foreignObject
            requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
            height="12"
-           width="28"
+           width="67"
            pointer-events="all"
            style="overflow:visible;">
           <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 67px; white-space: nowrap; word-wrap: normal; text-align: center;">
             <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">State</xhtml:div>
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">2D VIEWER</xhtml:div>
           </xhtml:div>
         </foreignObject>
         <text
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="text26-7"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
+           id="text52-7"
            font-size="12px"
-           y="12"
-           x="14">Viewer</text>
+           y="9.5271835"
+           x="36.01984">VIEWER</text>
       </switch>
     </g>
   </g>

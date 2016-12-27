@@ -77,4 +77,11 @@ La struttura dei visualizzatori \`e schematizzata nella figura~\ref{fig_viewers}
 
 \subsection{Architettura serverless}
 Una tra le sfide che ha caratterizzato il progetto \`e l'utilizzo di un approccio serverless. L'intera applicazione viene eseguita all'interno del browser, ottenendo i vantaggi di: (i) evitare all'utilizzatore complicate installazioni del sistema o procedure di aggiornamento; (ii) fornire un livello di astrazione tale da rendere l'ambiente compatibile su diverse macchine e su diversi sistemi operativi; (iii) abilitare un rilascio di nuove versioni centralizzato, in grado di raggiungere tutti gli utenti contemporanemante; (iv) eliminare il punto di concentramento del calcolo in quanto questo rimane confinato sulla macchina dell'utente.
-Per permettere la generazione di elementi architetturali complessi il sistema \`e in grado inoltre di sfruttare dei worker di tipo FaaS (Function as a Service) demandando l'onerosa generazione delle geometrie 3D necessarie alla visualizzazione.
+Per permettere la generazione di elementi architetturali complessi il sistema \`e in grado inoltre di sfruttare dei worker di tipo FaaS (Function as a Service) demandando l'onerosa generazione delle geometrie 3D necessarie alla visualizzazione. Nella figura~\ref{fig_serverless} c'\`e uno schema dell'architettura dell'applicazione
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\linewidth]{contents/images/serverless-diagram}
+
+\caption{The serverless architecture for our application. We can recognize the collaboration component, based on firebase. We can also see the FAAS container for the plugin catalog which is linked with a BAAS component for plugins generated on server with other modeling software. We can also manage an optional user login to the system, with another BAAS. Notice that the core application is entirely run on front end side}
+\label{fig_serverless}
+\end{figure}

@@ -1,14 +1,4 @@
-\section{Results}
-
-
-E' possibile identificare uno stato centralizzato e consistente che descrive lo stato del progetto\\
-Grazie all'algoritmo del virtual dom il 2d viene manutenuto allineata sulla base dello stato in modo automatico\\
-Grazie all'algoritmo di diff e patch il 3d viene mutuato senza effettuare un rendering completo, ma applicando le modifiche dello stato\\
-Il sistema di lock su layer permette la modifica contemporanea su parti diverse del progetto\\
-Servizio di database realtime permette di sincronizzare i vari client sulle modifiche anche in modo concorrente\\
-Definizione dei plugin \`e possibile estendere gli elementi geometrici che arricchiscono il progetto architettonico\\
-Con l'utilizzo dei componenti \`e possibile comporre l'interfaccia ed esporre il servizio in modo modulare\\\\
-
+\section{Results}\label{sec:results}
 
 Veniamo ora a quali risultati ci ha permesso l'adozione delle tecniche viste prima nello sviluppo dell'applicazione. Il pattern uniflow ci ha permesso di identificare uno stato centralizzato e consistente che descrive lo stato del progetto. In questo modo abbiamo isolato la logica di business e creato un'architettura per la collaborazione poco complessa. Il pattern uniflow associato al virtual dom, ci consente poi di renderizzare i cambiamenti in modo automatico senza complicati algoritmi di ottimizzazione, come il sistema di diff e patch necessario per renderizzare il modello tridimensionale in maniera efficiente. L'approccio serverless e l'introduzione dei layer hanno poi permesso di integrare una piattaforma di collaborazione remota senza grandi sforzi. Inoltre il sistema è espandibile dal punto di vista degli elementi geometrici, dove l'utente pu\`o registrare addirittura dei servizi esterni per servire i propri. Infine, l'utilizzo dei componenti permette di esporre il servizio in modo modulare migliorandone la manutenibilit\`a
 

@@ -1,4 +1,4 @@
-\section{Methodology}
+\section{Methodology}\label{sec:methodology}
 
 \subsection{Application as Finite State Machine with centralized state}\label{sec:central_state}
 Lo sviluppo del progetto si \`e focalizzato sull'individuazione di una struttura gerarchica di oggetti Javascript in grado di rappresentare in modo esaustivo l'insieme delle componenti presenti sulla planimetria. L'intero stato dell'applicazione viene descritto da una \textbf{struttura ad albero immutabile} di cui viene mantenuto un riferimento al nodo radice. Ciascuna modifica atomica corporta: (i) La creazione di un nuovo stato \texttt{s'} identico al precedente stato \texttt{s}; (ii) L'applicazione delle modifiche allo stato \texttt{s'}; (iii) La modifica del puntatore che rappresenta lo stato corrente da \texttt{s} ad \texttt{s'}. Dal punto di vista della gestione della memoria questo meccanismo richiederebbe un importante dispendio di risorse. Per evitare ci\`o l'implementazione ImmutableJS adotta dei meccanismi che simulano il principio di immutabilit\`a evitando la copia in profondit\`a della memoria  (deep clone).

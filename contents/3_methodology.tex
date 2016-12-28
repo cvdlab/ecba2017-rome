@@ -1,9 +1,9 @@
 \section{Methodology}
 
 \subsection{Application as Finite State Machine with centralized state}
-Lo sviluppo del progetto si \`e focalizzato sull'individuazione di una struttura gerarchica di oggetti Javascript in grado di rappresentare in modo esaustivo l'insieme delle componenti presenti sulla planimetria. L'intero stato dell'applicazione viene descritto da una \textbf{struttura ad albero immutabile} di cui viene mantenuto un riferimento al nodo radice. Ciascuna modifica atomica corporta: (i) La creazione di un nuovo stato \texttt{s'} identico al precedente stato \texttt{s}; (ii) L'applicazione delle modifiche allo stato \texttt{s'}; (iii) La modifica del puntatore che rapressenta lo stato corrente da \texttt{s} ad \texttt{s'}. Dal punto di vista della gestione della memoria questo meccanismo richiederebbe un importante dispendio di risorse. Per evitare ci\`o l'implementazione ImmutableJS adotta dei meccanismi che simulano il principio di immutabilit\`a evitando la copia in profondit\`a della memoria  (deep clone).
+Lo sviluppo del progetto si \`e focalizzato sull'individuazione di una struttura gerarchica di oggetti Javascript in grado di rappresentare in modo esaustivo l'insieme delle componenti presenti sulla planimetria. L'intero stato dell'applicazione viene descritto da una \textbf{struttura ad albero immutabile} di cui viene mantenuto un riferimento al nodo radice. Ciascuna modifica atomica corporta: (i) La creazione di un nuovo stato \texttt{s'} identico al precedente stato \texttt{s}; (ii) L'applicazione delle modifiche allo stato \texttt{s'}; (iii) La modifica del puntatore che rappresenta lo stato corrente da \texttt{s} ad \texttt{s'}. Dal punto di vista della gestione della memoria questo meccanismo richiederebbe un importante dispendio di risorse. Per evitare ci\`o l'implementazione ImmutableJS adotta dei meccanismi che simulano il principio di immutabilit\`a evitando la copia in profondit\`a della memoria  (deep clone).
 
-La gestione centralizzata dello stato permette lo sviluppo di funzionalità che hanno come unico obiettivo la creazione di un nuovo stato coerente con la modifica richiesta, senza la necessità di agire sull'interfaccia o su qualsiasi altro componente in esecuzione. L'adeguamento dell'interfaccia grafica al nuovo stato viene effettuato dall'algoritmo del diff and patch di cui verrà di seguito descitto il funzionamento.
+La gestione centralizzata dello stato permette lo sviluppo di funzionalità che hanno come unico obiettivo la creazione di un nuovo stato coerente con la modifica richiesta, senza la necessità di agire sull'interfaccia o su qualsiasi altro componente in esecuzione. L'adeguamento dell'interfaccia grafica al nuovo stato viene effettuato secondo i meccanismi descritti nella sezione~\ref{sec:ui_components}.
 
 Memorizzando la storia di tutti gli stati generati dall'applicazione e sfruttando le garanzie offerte dall'immutabilità si può effettuare, in qualsiasi momento, un'operazione di redo ad un vecchio stato attraverso la sostituzione dello stato corrente con uno qualsiasi tra quelli passati.
 
@@ -42,7 +42,7 @@ La categorizzazione individua un insieme di casi d'uso con cui l'utente pu\`o in
 (v) Rimozione dei cicli massimali.\\\\
 \textbf{Objects}, rientrano in questa categoria tutti gli oggetti posizionabili sulle aree. L'utente pu\`o agire sulla disposizione sia in termini di posizione che rotazione.\\
 
-\subsection{UI components}
+\subsection{UI components}\label{sec:ui_components}
 
 L'intera applicazione \`e stata progettata in maniera modulare, rifacendosi ai principi di \textbf{SOLID programming} in modo che sia espandibile. Dal punto di vista web il pattern di riferimento \`e stato quello dei \textbf{web components}, sfruttando l'implementazione di ReactJS. L'idea di base \`e quello di definire l'applicazione frontend come una collezione di componenti, che vengono renderizzati in modo diverso a seconda dei valori assegnati allo stato. In figura~\ref{fig_ui} abbiamo un esempio di applicazione di questa tecnologia. \\
 

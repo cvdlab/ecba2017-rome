@@ -1,6 +1,27 @@
 \section{Methodology}\label{sec:methodology}
 
 \subsection{Application as Finite State Machine with centralized state}\label{sec:central_state}
+
+Development of the project focused on an individuation of a hierarchical Javascript object structure that allow to fully represent all the parts that there are on a plan. The application state is described with an \textbf{immutable tree structure} of which is maintained a reference of the root node. Each atomic change require: (i) The build of a new state \texttt{s'} equal to the previous state \texttt{s}; (ii) Execution of changes on the new state \texttt{s'}; (iii) A replace of the root reference from \texttt{s} to \texttt{s'}. From the memory point this operations would require a lot of resource. To avoid this problem the implementation \textbf{Immutable.js}~\footnote{https://facebook.github.io/immutable-js/} made by Facebook, simulate immutability pattern, avoiding the deep clone of the memory.
+
+The centralized state handling allow to develop features that have as unique goals the creation of a new state coerent with the requested change, without to manage on UI or any other component. The UI adjustment to the new state works thatk to some mechanisms that we will illustrate in the section~\ref{sec:ui_components}.
+
+Thanks to the history of each state generated to the application and thanks to guarantees offered by the immutability pattern we can, in each moment, perform a redo operation to an oldest state, by means of a replace of the current state with one from any of the past state.
+
+To dominate the complexity of the application the system is modelled on a state machine. Thanks to a model based on actions and reducer offered by the pattern \textbf{unidirectional data flow} we have found a directed graph the show all available evolutions of the application state. Each node correspond to a \textbf{mode}, each edge correspond to an action that the user can execute starting from a node. Depending on the mode each event browser, for example \texttt{click} or \texttt{mousemove}, is mapped on an action. A part of the state machine is shown in figure~\ref{fig_uc_draw_wall}.
+
+Centralized state handling and the logic handling by mean of a state machine modelling has been possible thank to the library \textbf{Redux.js}~\footnote{http://redux.js.org/}.
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.6\linewidth]{contents/images/uc_draw_wall}
+
+\caption{Subgraph of the state machine that show a wall creation. (i) Node \texttt{idle}: waiting mode of the application. No action has yet been taken. (ii) Node \texttt{waiting\_drawing\_wall}: user has selected wall design tool, but he hasn't already started the draw phase. (iii) Node \texttt{drawing\_wall}: user has placed the starting point of the wall.}
+\label{fig_uc_draw_wall}
+\end{figure}
+
+
 Lo sviluppo del progetto si \`e focalizzato sull'individuazione di una struttura gerarchica di oggetti Javascript in grado di rappresentare in modo esaustivo l'insieme delle componenti presenti sulla planimetria. L'intero stato dell'applicazione viene descritto da una \textbf{struttura ad albero immutabile} di cui viene mantenuto un riferimento al nodo radice. Ciascuna modifica atomica corporta: (i) La creazione di un nuovo stato \texttt{s'} identico al precedente stato \texttt{s}; (ii) L'applicazione delle modifiche allo stato \texttt{s'}; (iii) La modifica del puntatore che rappresenta lo stato corrente da \texttt{s} ad \texttt{s'}. Dal punto di vista della gestione della memoria questo meccanismo richiederebbe un importante dispendio di risorse. Per evitare ci\`o l'implementazione \textbf{Immutable.js}~\footnote{https://facebook.github.io/immutable-js/} realizzata da Facebook, adotta dei meccanismi che simulano il principio di immutabilit\`a evitando la copia in profondit\`a della memoria  (deep clone).
 
 La gestione centralizzata dello stato permette lo sviluppo di funzionalità che hanno come unico obiettivo la creazione di un nuovo stato coerente con la modifica richiesta, senza la necessità di agire sull'interfaccia o su qualsiasi altro componente in esecuzione. L'adeguamento dell'interfaccia grafica al nuovo stato viene effettuato secondo i meccanismi descritti nella sezione~\ref{sec:ui_components}.
@@ -30,6 +51,7 @@ However, the adoption of the uniflow pattern, with a global state, had suggested
 
 
 \subsection{Building elements}\label{building_elements}
+
 
 L'insieme degli elementi che \`e possibile inserire all'interno della planimetria vengono gestiti in un \textbf{catalogo}, strutturato in categorie.
 La categorizzazione individua un insieme di casi d'uso con cui l'utente pu\`o interagire.\\\\

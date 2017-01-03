@@ -52,6 +52,15 @@ However, the adoption of the uniflow pattern, with a global state, had suggested
 
 \subsection{Building elements}\label{building_elements}
 
+Each building element that the user can add on a plan is available thought a \textbf{catalog}, structured in categories. Each category identify a group of use case whereby the user can interact.\\\\
+  \textbf{Walls}, each kind of wall (perimetral, interior, structural) is part of this category. The user can add a new wall selecting the begin and end of the element. The internal state of all the walls correspond to an undirected graph: each \textbf{node} match geometric points in which are intersected more walls and has a couple of coordinates that place it on a 2D space; each \textbf{edge} match a specific wall.
+  This internal rappresentation offer a good interactive level to drag and drop walls operations: each wall drag is performed by means of a relocation of a node that cause, other that the displacement of the requested wall, a displacement of each adiacent wall.\\\\
+
+  \textbf{Openings}, each element that hole a wall (windows, doors, arches) is part of this category. The user can add a new opening thanks to a snap on an existent wall. The internal state link each element with its wall.
+
+   \textbf{Areas}, floor belong to this category. They are automatically generated thank to a wall graph analysis. The algorithm is composed of few phases: (i) Search of biconnected component by mean of Hopcroft-Tarjan algorithm~(see \cite{Hopcroft:1973:AEA:362248.362272}); (ii) Removal of edges that are not part of a biconnected component; (iii) Search of all cycles through an algorithm that do a double check of each edges sorted by angle; (iv) Search of maximal cycles correspondent to perimeter edges by an application of Gauss's area formula [CITAZIONE????????]; (v) Removal of maximal cycles;
+
+   \textbf{Objects}, each element that can be arranged on an area is part of this category. The user can interact with the object and change its disposal and rotation.
 
 L'insieme degli elementi che \`e possibile inserire all'interno della planimetria vengono gestiti in un \textbf{catalogo}, strutturato in categorie.
 La categorizzazione individua un insieme di casi d'uso con cui l'utente pu\`o interagire.\\\\

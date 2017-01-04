@@ -21,7 +21,7 @@ Centralized state handling and the logic handling by mean of a state machine mod
 \label{fig_uc_draw_wall}
 \end{figure}
 
-
+\iffalse
 Lo sviluppo del progetto si \`e focalizzato sull'individuazione di una struttura gerarchica di oggetti Javascript in grado di rappresentare in modo esaustivo l'insieme delle componenti presenti sulla planimetria. L'intero stato dell'applicazione viene descritto da una \textbf{struttura ad albero immutabile} di cui viene mantenuto un riferimento al nodo radice. Ciascuna modifica atomica corporta: (i) La creazione di un nuovo stato \texttt{s'} identico al precedente stato \texttt{s}; (ii) L'applicazione delle modifiche allo stato \texttt{s'}; (iii) La modifica del puntatore che rappresenta lo stato corrente da \texttt{s} ad \texttt{s'}. Dal punto di vista della gestione della memoria questo meccanismo richiederebbe un importante dispendio di risorse. Per evitare ci\`o l'implementazione \textbf{Immutable.js}~\footnote{https://facebook.github.io/immutable-js/} realizzata da Facebook, adotta dei meccanismi che simulano il principio di immutabilit\`a evitando la copia in profondit\`a della memoria  (deep clone).
 
 La gestione centralizzata dello stato permette lo sviluppo di funzionalità che hanno come unico obiettivo la creazione di un nuovo stato coerente con la modifica richiesta, senza la necessità di agire sull'interfaccia o su qualsiasi altro componente in esecuzione. L'adeguamento dell'interfaccia grafica al nuovo stato viene effettuato secondo i meccanismi descritti nella sezione~\ref{sec:ui_components}.
@@ -40,7 +40,7 @@ La gestione dello stato centralizzato e la gestione della logica applicata reali
 \caption{Sottografo della macchina a stati che rappresenta la creazione di un muro. (i) Nodo \texttt{idle}: modalit\'a d'attesa dell'applicazione. Non è stata ancora intrapresa nessuna operazione. (ii) Nodo \texttt{waiting\_drawing\_wall}: l'utente ha selezionato lo strumento disegno muro, ma non ha ancora iniziato il disegno. (iii) Nodo \texttt{drawing\_wall}: l'utente ha posizionato il punto di inizio del muro.}
 \label{fig_uc_draw_wall}
 \end{figure}
-
+\fi
 
 \subsection{Collaboration}
 
@@ -62,6 +62,7 @@ Each building element that the user can add on a plan is available thought a \te
 
    \textbf{Objects}, each element that can be arranged on an area is part of this category. The user can interact with the object and change its disposal and rotation.
 
+\iffalse
 L'insieme degli elementi che \`e possibile inserire all'interno della planimetria vengono gestiti in un \textbf{catalogo}, strutturato in categorie.
 La categorizzazione individua un insieme di casi d'uso con cui l'utente pu\`o interagire.\\\\
 \textbf{Walls}, rientrano in questa categoria tutti i tipi di muro (perimetrali, interni, portanti). La creazione avviene specificando il punto di inizio e fine dell'elemento. La rappresentazione interna viene ricondotta a quella di un grafo in cui: i \textbf{nodi} corrispondono ai punti geometrici in cui si intersecano pi\`u muri e hanno delle coordinate che li collocano nello spazio; gli \textbf{archi} corrispondono al muro. Questa rappresentazione garantisce inoltre un’efficace risposta alle operazioni di drag and drop sui muri: ogni spostamento viene applicato attraverso la modifica della posizione dei nodi comportando, oltre allo spostamento del muro richiesto, un riposizionamento di tutti i muri adiacenti.\\\\
@@ -72,6 +73,7 @@ La categorizzazione individua un insieme di casi d'uso con cui l'utente pu\`o in
 (iv) Individuazione dei cicli massimali, corrispondenti ai cicli che coinvolgono tutti gli archi perimetrali del grafo attraverso la Gauss's area formula;
 (v) Rimozione dei cicli massimali.\\\\
 \textbf{Objects}, rientrano in questa categoria tutti gli oggetti posizionabili sulle aree. L'utente pu\`o agire sulla disposizione sia in termini di posizione che rotazione.\\
+\fi
 
 \subsection{UI components}\label{sec:ui_components}
 
@@ -114,9 +116,12 @@ To allow complex architectural building the system can operate with some FaaS (F
 
 To perform user collaboration the system uses Firebase for synchronization state messaging.
 
-
+\iffalse
 Una tra le sfide che ha caratterizzato il progetto \`e l'utilizzo di un approccio serverless. L'intera applicazione viene eseguita all'interno del browser, ottenendo i vantaggi di: (i) evitare all'utilizzatore complicate installazioni del sistema o procedure di aggiornamento; (ii) fornire un livello di astrazione tale da rendere l'ambiente compatibile su diverse macchine e su diversi sistemi operativi; (iii) abilitare un rilascio di nuove versioni centralizzato, in grado di raggiungere tutti gli utenti contemporanemante; (iv) eliminare il punto di concentramento del calcolo in quanto questo rimane confinato sulla macchina dell'utente.
 Per permettere la generazione di elementi architetturali complessi il sistema \`e in grado inoltre di sfruttare dei worker di tipo FaaS (Function as a Service) demandando l'onerosa generazione delle geometrie 3D necessarie alla visualizzazione. Nella figura~\ref{fig_serverless} c'\`e uno schema dell'architettura dell'applicazione
+\fi
+
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\linewidth]{contents/images/serverless-diagram}

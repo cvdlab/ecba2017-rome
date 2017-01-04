@@ -8,7 +8,7 @@ The centralized state handling allow to develop features that have as unique goa
 
 Thanks to the history of each state generated from the application and thanks to guarantees the offered by the immutability pattern we can, in each moment, perform a redo operation to an oldest state, by means of a replace of the current state with one from any of the past states.
 
-To dominate the complexity of the application the system is modelled on a state machine. Thanks to a model based on actions and reducer offered by the pattern \textbf{unidirectional data flow} we have found a directed graph that show all available evolutions of the application state. Each node correspond to a \textbf{mode}, each edge correspond to an \textbf{action} that the user can execute starting from a node. Depending on the mode each event browser, for example \texttt{click} or \texttt{mousemove}, is mapped on an action. A part of the state machine is shown in figure~\ref{fig_uc_draw_wall}.
+To dominate the complexity of the application the system is modelled on a state machine. Thanks to a model based on actions and reducer offered by the pattern \textbf{unidirectional data flow} we have found a directed graph that show all available evolutions of the application state. Each node correspond to a \textbf{mode}, each edge correspond to an \textbf{action} that the user can execute starting from a node. Depending on the mode each event browser, for example \texttt{click} or \texttt{mousemove}, is mapped on an action. A part of the state machine is shown in figure~\ref{fig_uc_draw_wall}. How we can see there are three node that, has described, correspond to three mode: (i) Node \texttt{idle}: waiting mode of the application. No action has yet been taken. (ii) Node \texttt{waiting\_drawing\_wall}: user has selected wall design tool, but he hasn't already started the draw phase. (iii) Node \texttt{drawing\_wall}: user has placed the starting point of the wall.
 
 Centralized state handling and the logic handling by mean of a state machine modelling has been possible thank to the library \textbf{Redux.js}~\footnote{http://redux.js.org/}.
 
@@ -17,7 +17,7 @@ Centralized state handling and the logic handling by mean of a state machine mod
 \centering
 \includegraphics[width=0.6\linewidth]{contents/images/uc_draw_wall}
 
-\caption{Subgraph of the state machine that show a wall creation. (i) Node \texttt{idle}: waiting mode of the application. No action has yet been taken. (ii) Node \texttt{waiting\_drawing\_wall}: user has selected wall design tool, but he hasn't already started the draw phase. (iii) Node \texttt{drawing\_wall}: user has placed the starting point of the wall.}
+\caption{Subgraph of the state machine that show a wall creation.}
 \label{fig_uc_draw_wall}
 \end{figure}
 
@@ -77,18 +77,20 @@ La categorizzazione individua un insieme di casi d'uso con cui l'utente pu\`o in
 
 \subsection{UI components}\label{sec:ui_components}
 
-The entire application has been developed using separated modules, following the \textbf{SOLID programming} principles, as it could be expanded. For the web part, we have used the \textbf{web components pattern}, with the implementation of \textbf{React.js}\footnote{https://github.com/facebook/react} written by Facebook. The main idea is to define the frontend application as a collection of components, each one rendered in a different way according with values assigned to the state. In Figure~\ref{fig_ui} we have an example of based on our application.\\
+The entire application has been developed using separated modules, following the \textbf{SOLID programming} principles, as it could be expanded. For the web part, we have used the \textbf{web components pattern}, with the implementation of \textbf{React.js}\footnote{https://github.com/facebook/react} written by Facebook. The main idea is to define the frontend application as a collection of components, each one rendered in a different way according with values assigned to the state. In Figure~\ref{fig_ui} se can see the user interface of the application with the most interesting components: the toolbar (where every button is another component), the sidebar and the 2D viewer:
+
+we have an example of based on our application.\\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.65\linewidth]{contents/images/ui}\\
-\caption{The user interface of the application with the most interesting components: the toolbar (where every button is another component), the sidebar and the 2D viewer}
+\includegraphics[width=\linewidth]{contents/images/ui}\\
+\caption{User interface of the application}
 \label{fig_ui}
 \end{figure}
 
 In particular, the most interesting components developed by us are the \textbf{viewers}, for example the 2D-viewer and the 3D-viewer. This component-based structure, allows us to define whatever state definition (for example in a tabular form) simply adding a new component.\\
 
-The viewers structure is outlined in figure~\ref{fig_viewers}, where we can observe the great blocks. The first one is the \textit{catalog} and as we have already seen in section~\ref{building_elements} it contains all the building elements with their properties. We also the the application \textit{core}, which manages the state and contains all drawing functionalities. It communicates with the catalog taking the building models properties. At least we have the \textit{viewers}, that are chosen observing the current state mode (see section~\ref{sec:central_state}). At the moment we implemented the 2D and 3D viewers (see figure~\ref{fig_viewer})\\\\
+The viewers structure is outlined in figure~\ref{fig_viewers}, where we can observe the great blocks. The first one is the \textit{catalog} and as we have already seen in section~\ref{building_elements} it contains all the building elements with their properties. We also see the application \textit{core}, which manages the state and contains all drawing functionalities, and can instantiate several different viewers giving them the state for the representation. It communicates with the catalog taking the building models properties. At least we have the \textit{viewers}, that are chosen observing the current state mode (see section~\ref{sec:central_state}). At the moment we implemented the 2D and 3D viewers (see figure~\ref{fig_viewer})\\\\
 \textbf{2D Viewer}. This viewer creates a 2D view of the building model. Given the state, it exploit the \textbf{Virtual DOM} (see~\cite{vdom}) implemented by React.js, to update only changed parts avoiding continuously global updates.\\\\
 \textbf{3D Viewer}. It exploits the WEBGL-based modeling library \textbf{Three.js}~\footnote{https://threejs.org/} to build a 3D view of our building. To avoid global refreshes every time we update a part of the state, it has been implemented a \texttt{diff} and \textit{patch} system standardized in~\cite{rfc6902}. So it has been implemented a data structure which maps the Three.js objects with the building elements inside the state. Every time the user launches a Redux.js action, the application compute the difference between the old state and the new one a redraw only the changed objects. In particular we can have the following \textit{operations}: (i) \textbf{add}, (ii) \textbf{replace} and (iii) \textbf{remove}. For every operation it is determined a behavior based on the changed building element, changing also related building elements.
 
@@ -96,7 +98,7 @@ The viewers structure is outlined in figure~\ref{fig_viewers}, where we can obse
 \centering
 \includegraphics[width=\linewidth]{contents/images/diagramma-visualizzatori}
 
-\caption{The architectural schema for the viewers. Here we can see that the core can instantiate several different viewers giving them the state for the representation}
+\caption{The architectural schema for the viewers}
 \label{fig_viewers}
 \end{figure}
 
@@ -112,7 +114,7 @@ The viewers structure is outlined in figure~\ref{fig_viewers}, where we can obse
 
 The project uses a serverless architecture. The application is most executed into the user browser, with follow advantages: (i) avoid user hard installation or updating typically performed by not technical users; (ii) offer a good abstraction level that makes the application platform and operation system independent; (iii) allows a centralized new version deploy through a CDN (Content Delivery Network) update; (iv) avoid a point of concentration of the calculation that doesn't leave the user computer.
 
-To allow complex architectural building the system can operate with some FaaS (Function as a Service) worker delegating the CPU bound generation required for complex 3D geometric object. The figure ~\ref{fig_serverless} show a schema of the application.
+To allow complex architectural building the system can operate with some FaaS (Function as a Service) worker delegating the CPU bound generation required for complex 3D geometric object. The figure ~\ref{fig_serverless} show a schema of the application. We can recognize the collaboration component, based on Firebase. We can also see the FAAS container for the plugin catalog which is linked with a BAAS component for plugins generated on server with other modeling software. We can also manage an optional user login to the system, with another BAAS. Notice that the core application is entirely run on front end side.
 
 To perform user collaboration the system uses Firebase for synchronization state messaging.
 
@@ -126,6 +128,6 @@ Per permettere la generazione di elementi architetturali complessi il sistema \`
 \centering
 \includegraphics[width=\linewidth]{contents/images/serverless-diagram}
 
-\caption{The serverless architecture for our application. We can recognize the collaboration component, based on Firebase. We can also see the FAAS container for the plugin catalog which is linked with a BAAS component for plugins generated on server with other modeling software. We can also manage an optional user login to the system, with another BAAS. Notice that the core application is entirely run on front end side}
+\caption{The serverless architecture for our application.}
 \label{fig_serverless}
 \end{figure}

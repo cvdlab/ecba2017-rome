@@ -2,16 +2,17 @@
 
 \subsection{Application as Finite State Machine with centralized state}\label{sec:central_state}
 
-Development of the project focused on an individuation of a hierarchical Javascript object structure, defined state, that allow to fully represent all the parts that there are on a plan. The application state is described with an \textbf{immutable tree structure} of which is maintained a reference to the root node. Each atomic change require: (i) The build of a new state \texttt{s'} equal to the previous state \texttt{s}; (ii) Execution of changes on the new state \texttt{s'}; (iii) A replace of the root reference from \texttt{s} to \texttt{s'}. From the memory point this operations would require a lot of resource. To avoid this problem the implementation \textbf{Immutable.js}~\footnote{https://facebook.github.io/immutable-js/} made by Facebook, simulate immutability pattern, avoiding the deep clone of the memory.
+\begin{itemize}
+ \item unidirectional data flow
+ \item How to change the state (actions and reducers)
+ \item Immutability
+ \item State as finite state machine
+ \item Example of finite state machine
+\end{itemize}
 
-The centralized state handling allow to develop features that have as unique goals the creation of a new state coerent with the requested change, without to manage on UI or any other component. The UI adjustment to the new state works thank to some mechanisms that we will illustrate in the section~\ref{sec:ui_components}.
 
-Thanks to the history of each state generated from the application and thanks to guarantees the offered by the immutability pattern we can, in each moment, perform a redo operation to an oldest state, by means of a replace of the current state with one from any of the past states.
-
-To dominate the complexity of the application the system is modelled on a state machine. Thanks to a model based on actions and reducer offered by the pattern \textbf{unidirectional data flow} we have found a directed graph that show all available evolutions of the application state. Each node correspond to a \textbf{mode}, each edge correspond to an \textbf{action} that the user can execute starting from a node. Depending on the mode each event browser, for example \texttt{click} or \texttt{mousemove}, is mapped on an action. A part of the state machine is shown in figure~\ref{fig_uc_draw_wall}. How we can see there are three node that, has described, correspond to three mode: (i) Node \texttt{idle}: waiting mode of the application. No action has yet been taken. (ii) Node \texttt{waiting\_drawing\_wall}: user has selected wall design tool, but he hasn't already started the draw phase. (iii) Node \texttt{drawing\_wall}: user has placed the starting point of the wall.
-
-Centralized state handling and the logic handling by mean of a state machine modelling has been possible thank to the library \textbf{Redux.js}~\footnote{http://redux.js.org/}.
-
+The application exploits the \textbf{unidirectional data flow pattern} to gain great benefits in terms of maintainability of the software objects, due to the lightness of the resulting architecture. As requested by the pattern, the software has to be based on a \textbf{centralized state}, which represents the application logic. Consequently, every feature has as its unique goal the obtainment of a new state coherent with the requested change, following various mechanisms based on \textbf{actions} (each one containing the data for the new state) and \textbf{reducers} (software objects that can write the new state) provided by the \textbf{Redux.js}~\footnote{http://redux.js.org/} library. Usually, the unidirectional data flow pattern is associated with the \textbf{Immutability pattern}, which contributes to maintainability, avoiding side effects for state changes and providing smaller tests for application logic changes. We also benefits of undo/redo operations to an oldest/newer state by means of a replace of the current state with the previous/next one. As a consequence, the state can be seen as an \textbf{immutable tree structure} whose changes require: (i) The build of a new state \texttt{s'} equal to the previous state \texttt{s}; (ii) Execution of changes on the new state \texttt{s'}; (iii) Reference replacement from \texttt{s} to \texttt{s'}. Despite its simplicity, this pattern can nevertheless lead to memory waste, so we used the \textbf{Immutable.js}\footnote{https://facebook.github.io/immutable-js/} library (made by facebook), which exploits structural sharing via hash maps tries and vector tries minimizing the need to copy or cache data.
+In our application, the state contains all the parts that there are on a plan, giving life to a finite state machine of all possible evolutions of the application state, where each node correspond to a \textbf{mode} (and consequently to a possible application state), and each edge correspond to an action from that point (which in our case is typically a javascript event such as \texttt{click} or \texttt{mousemove}). A part of the state machine is shown in figure~\ref{fig_uc_draw_wall}. How we can see there are three nodes corresponding to three modes: (i) Node \texttt{idle}: waiting mode of the application. No action has yet been taken. (ii) Node \texttt{waiting\_drawing\_wall}: user has selected wall design tool, but he hasn't already started the draw phase. (iii) Node \texttt{drawing\_wall}: user has placed the starting point of the wall.
 
 \begin{figure}[!t]
 \centering
@@ -43,6 +44,12 @@ La gestione dello stato centralizzato e la gestione della logica applicata reali
 \fi
 
 \subsection{Collaboration}
+
+\begin{itemize}
+ \item Review of related literature (Operational transformation)
+ \item Central topology for collaboration
+\end{itemize}
+
 
 
 Now we will study the mechanisms chosen to provide collaboration for the same project, among users on different PCs. In literature there are many techniques for introducing collaboration between remote users. For example in~\cite{Ellis:1989:CCG:66926.66963} we can find the \textbf{Operational Transformation} technology, where a group of nodes exchanges messages without a \textit{central control point}. It is based on two main properties: (i) you can transform changes relative to other changes and (ii) there is no matter in which order concurrent changes are applied, you end up with the same document.\\
@@ -76,6 +83,14 @@ La categorizzazione individua un insieme di casi d'uso con cui l'utente pu\`o in
 \fi
 
 \subsection{UI components}\label{sec:ui_components}
+
+\begin{itemize}
+ \item web components pattern
+ \item Example of component: 2D viewer
+ \item Example of component: 3D viewer
+ \item diff and patch algorithm for 3D updates
+\end{itemize}
+
 
 The entire application has been developed using separated modules, following the \textbf{SOLID programming} principles, as it could be expanded. For the web part, we have used the \textbf{web components pattern}, with the implementation of \textbf{React.js}\footnote{https://github.com/facebook/react} written by Facebook. The main idea is to define the frontend application as a collection of components, each one rendered in a different way according with values assigned to the state. In Figure~\ref{fig_ui} se can see the user interface of the application with the most interesting components: the toolbar (where every button is another component), the sidebar and the 2D viewer:
 

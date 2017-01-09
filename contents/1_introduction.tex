@@ -1,21 +1,21 @@
 \section{Introduction}
 
-This work intend to show a web based tool for building design. About the architectural point has been introduced a serverless architecture (see~\cite{Roberts}). This kind of architecture uses third party services (typically in the cloud) or functions executed into ephemeral containers (may only last for one invocation) to manage the internal state and for server-side logic.
+Nowadays we are seeing a relentless migration of software products toward services accessible via the Web medium. This is mainly due to the undeniable benefits in terms of accessibility, usability, maintainability and spreadability granted by the Web medium itself. Nevertheless these benefits don't come without a cost: performance  and development complexity become major concerns in the Web environment. 
 
-This tool aims to build building model through a simplified UI (User Interface) that avoid complex 3D interactions that are replaced by interactions with two-dimensional symbolic part of the building.
+In particular, due to the several introduced abstraction layers it is not always feasible to "port" a desktop application into the Web realm, an aspect to be taken into account even for the relevant hardware differences among all the devices equipped with a Web Browser. It can be even more arduous to tackle the inherent distributed software architecture (a client/server one at least) induced by the Web platform.
 
-The web character of the project permitted to test API for remote users collaboration, that allow to build together a building also if far each other.
+Nevertheless increasingly rich and complex Web applications began to appear, supported by the enriched HTML5 APIs, which thanks to the WebGL [CITAZIONE] (which enables direct access to GPU), Canvas [CITAZIONE] (2D raster APIs) and SVG [CITAZIONE] (vectorial drawing APIs), has paved the way for the entrance of Web Graphic Applications.
 
-The tool offer an high level of customization, thanks to: (i) \textbf{web components pattern} that allow to add new features; (ii) a customizable \textbf{catalog}, that allow to adapt building part of the model to the specific context in which the tool is using; (iii) a dynamic metadata handler the allow to set info on each part of the building.
+In this work we report about our endeavor toward the definition of a Web based buildings modeling tool which overcomes the aforementioned performance and development difficulties relying on a unidirectional data flow design pattern and on a serverless architecture~\cite{Roberts}, respectively.
 
-Next sections describe this concepts, showing how they are realized and which choose were made:
- In details:\\
+A serverless architecture, on the contrary of what the name may suggest, actually employs many different specific servers, whose operation and maintenance don't burden on the project developer(s). These several servers can be seen as third party services (typically cloud-based) or functions executed into ephemeral containers (may only last for one invocation) to manage the internal state and server-side logic. Realtime interaction among users jointly working on the same modeling project, is for example achieved via a third party APIs for remote users collaboration.
 
-In the section~\ref{sec:literature} we will show some related works about web building modelling with a focus on strengths and weaknesses of our work.\\\\
-In the section ~\ref{sec:methodology} we will show the core of the work introducing and commenting the most important architectural choose that we done\\\\
-In the section ~\ref{sec:results} we will show the solution of the methodical choose that were made, plus a focus on some future works related to the project.\\\\
+The tool user interface, entirely based on \textbf{web components pattern},  has been kept as simple as possible: the user is required to interact mainly with two-dimensional symbolic placeholders representing parts of the building, thus avoiding complex 3D interactions. 
+The modeling complexity is thus moved from the modeler to the developer which fills out an extendible \textbf{catalog} of customizable \textit{building elements}. The modeler has only to select the required element, place and parametrize it according to the requirements. It is obvious that a large number of building elements has to be provided to ensure the fulfillment of the most modeling requirements.
 
+The remainder of this document is organized as follows. Section~\ref{sec:literature} provides an overview of related work. Section~\ref{sec:methodology} presents adopted architectural solutions. Section ~\ref{sec:results} contains results, some conclusive remarks and figures future developments.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iffalse
 Scopo di questo lavoro \`e quello di presentare uno strumento di progettazione architettonica basato su web. Dal punto di vista architetturale, \`e stata introdotta una serverless architecture (vedi~\cite{Roberts}). Un'architettura di questo tipo si basa massivamente su servizi di terze parti (typically in the cloud) o su funzioni invocate all'interno di ephemeral containers (may only last for one invocation) per la gestione dello stato e della logica server-side.
 

@@ -8,15 +8,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="628px"
-   height="403px"
+   width="602"
+   height="283"
    version="1.1"
-   content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36&quot; version=&quot;6.0.2.6&quot; editor=&quot;www.draw.io&quot; type=&quot;google&quot;&gt;&lt;diagram name=&quot;Page-1&quot;&gt;3VlNc9owEP01HJOxbCzbR0PclBkSGEja9KhgFdwxyBUiQH99JSxhyx8JaYxLe2GkZbWSdt8+reSO1V/ubilKFnckxHHHNMJdx7rpmKbrQP4rBPtU0DXMVDCnUZiKQCaYRr+wFBpSuolCvNYUGSExixJdOCOrFZ4xTYYoJVtd7TuJ9VkTNMclwXSG4rL0axSyhdyWCTP5ZxzNF2pmAL30nyVSynIn6wUKyTYnsoKO1aeEsLS13PVxLHyn/JKO+1Tz73FhFK/YKQPkitdsr/aGQ75V2SWULcicrFAcZNIeJZtViIUBg/cWbBnzJuBNvIvYU679TahcOzbv/sCM7WUg0YYRLsqMDwlJ1LAVo/snafrQSY0IG+lSxfpqNytFa7KhM6klkcUQnWOpZR8dzQGKyRLzabgKxTFi0YtuHUmozI96x6FjEvF5TUOi2vJkTCWoTdVXJtIlyFFZTHxK0T6nlgiFdf08XWBp8wDbzpvjjdSi6uX2mIkOMKjBEDg/Jkz7jVifipfGMOE1gYl3h9LWIQNMLZRv6xtGs6G3zx96PfLXhqMHv/teshhjGvEtYioX0BginBn2UNf7bnjPLvBceGVaF4GRrvE+jLigHiPl0U6BxIzTSOwPwCZd/oLijXRdfzQJOiZESx7g3up5nRzCCWMekF4YvfDmXDT98Xg46PsPg9G9+pfPlVMogTiDqIDNdhExPE3QIfZbXqDosJXLwpTh3esQKkNBDQCFGKj+NqsWgCoBFrlKARa8nUeP5upX/GqV/FrhQyV6pkWJ7srx8PF2cF9hYPpwCJYBTgwBL3QS0Zzt44jHgrYSB1hEc7ccB1gRBreBMDhtU2nbh6hdpsyPEuSpvlXc0axzpUOle/Vq9HAu5dxbe/y07vPcteG8TrdLvFJLDpyc/eHo9kLZuXTGwRbZ2W2SnT8NJkHPnwYXwrbQ1vxqld3qnIls1fn6/7KtV858t6XE9yoKteHQ740mWg2WLw6CyZdBP/hH8t9pMf1Bueo9Z3Vm/kvVmdW1W6vOwFnKM+PagxpnQMtqiDWEzWauujX3Wp1bAPwguVRfL+3iG1nxepku9MNvZLBrF+Yx8+be1Aduww8rsMm0f+T8yo3dXGgegxZvWQq7Teex69id0uFfkYJ/8Q3TqMhas6WSQE1edRmofL5ZJ2ilhQn+3IhvHD2OU3ylUOGLB4VrM/tXIX4S3I0exIEmKgsB/mNapIZrjjW+6ChZi5AfEyMmm7CdKsMuVMMVWQHsirQofjb4o8eHOo7PBUyyyJ1/79+K1iX5rsQo5cqgKd/xbva5LaX27JulFfwG&lt;/diagram&gt;&lt;/mxfile&gt;"
    id="svg2"
    inkscape:version="0.91 r13725"
    sodipodi:docname="serverless-diagram.svg">
   <metadata
-     id="metadata122">
+     id="metadata183">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -37,77 +36,135 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1366"
      inkscape:window-height="715"
-     id="namedview120"
+     id="namedview181"
      showgrid="false"
-     inkscape:zoom="0.82817469"
-     inkscape:cx="398.58804"
-     inkscape:cy="285.54538"
+     inkscape:zoom="0.7358804"
+     inkscape:cx="375.35286"
+     inkscape:cy="27.308783"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g6" />
+     inkscape:current-layer="g17" />
   <defs
-     id="defs4" />
+     id="defs4">
+    <filter
+       id="dropShadow">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="1.7"
+         result="blur"
+         id="feGaussianBlur7" />
+      <feOffset
+         in="blur"
+         dx="3"
+         dy="3"
+         result="offsetBlur"
+         id="feOffset9" />
+      <feFlood
+         flood-color="#3D4574"
+         flood-opacity="0.4"
+         result="offsetColor"
+         id="feFlood11" />
+      <feComposite
+         in="offsetColor"
+         in2="offsetBlur"
+         operator="in"
+         result="offsetBlur"
+         id="feComposite13" />
+      <feBlend
+         in="SourceGraphic"
+         in2="offsetBlur"
+         id="feBlend15" />
+    </filter>
+  </defs>
   <g
      transform="translate(0.5,0.5)"
-     id="g6">
+     filter="url(#dropShadow)"
+     id="g17">
     <path
-       d="m 261.45233,126 72.98512,0 0,135 20.19255,0"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path8"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:0.63152653;stroke-miterlimit:10" />
-    <path
-       d="M 359.88 261 L 352.88 264.5 L 354.63 261 L 352.88 257.5 Z"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path10"
+       d="M 241 227 L 62.67 227 L 62.67 163.37"
+       fill="none"
        stroke="#000000"
-       fill="#000000" />
-    <path
-       d="m 261.02542,96 88.14368,0 0,-25 5.4609,0"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path12"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:0.63297164;stroke-miterlimit:10" />
+       id="path19" />
     <path
-       d="M 359.88 71 L 352.88 74.5 L 354.63 71 L 352.88 67.5 Z"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path14"
+       d="M 62.67 158.12 L 66.17 165.12 L 62.67 163.37 L 59.17 165.12 Z"
+       fill="#000000"
        stroke="#000000"
-       fill="#000000" />
-    <path
-       d="m 260.59852,111 94.45663,0 0,41 10.57485,0"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path16"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:0.65524679;stroke-miterlimit:10" />
+       id="path21" />
     <path
-       d="M 370.88 152 L 363.88 155.5 L 365.63 152 L 363.88 148.5 Z"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path18"
+       d="M 361 227 L 531 227 L 531 163.37"
+       fill="none"
        stroke="#000000"
-       fill="#000000" />
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path23" />
+    <path
+       d="M 531 158.12 L 534.5 165.12 L 531 163.37 L 527.5 165.12 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path25" />
+    <path
+       d="M 331 212 L 331 185.33 L 377.67 185.33 L 377.67 163.37"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path27" />
+    <path
+       d="M 377.67 158.12 L 381.17 165.12 L 377.67 163.37 L 374.17 165.12 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path29" />
+    <path
+       d="M 271 212 L 271 185.33 L 222.67 185.33 L 222.67 163.37"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path31" />
+    <path
+       d="M 222.67 158.12 L 226.17 165.12 L 222.67 163.37 L 219.17 165.12 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path33" />
     <rect
-       x="141.06706"
-       y="81"
+       x="241"
+       y="212"
        width="120"
        height="60"
        rx="9"
        ry="9"
+       fill="#000000"
+       stroke="#000000"
+       transform="translate(2,3)"
+       opacity="0.25"
+       id="rect35" />
+    <rect
+       x="241"
+       y="212"
+       width="120"
+       height="60"
+       rx="9"
+       ry="9"
+       fill="#ffffff"
+       stroke="#000000"
        pointer-events="none"
-       id="rect20"
-       style="fill:#ffffff;stroke:#000000" />
+       id="rect37" />
     <g
-       transform="translate(162.1708,95.688788)"
-       id="g22">
+       transform="translate(260.5,227.5)"
+       id="g39">
       <switch
-         id="switch24">
+         id="switch41">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
@@ -125,162 +182,52 @@
            x="39"
            y="19"
            font-size="12px"
-           id="text26"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">CORE APPLICATION</text>
+           id="text43"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">APPLICATION</text>
       </switch>
     </g>
     <path
-       d="M 561 227 C 561 205.67 621 205.67 621 227 L 621 275 C 621 296.33 561 296.33 561 275 Z"
+       d="M 62.67 97 L 62.67 88.37"
+       fill="none"
+       stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path28"
-       stroke="#000000"
-       fill="#ffffff" />
+       id="path45" />
     <path
-       d="M 561 227 C 561 243 621 243 621 227"
+       d="M 62.67 83.12 L 66.17 90.12 L 62.67 88.37 L 59.17 90.12 Z"
+       fill="#000000"
+       stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path30"
-       stroke="#000000"
-       fill="none" />
-    <g
-       transform="translate(564.5,230.5)"
-       id="g32">
-      <switch
-         id="switch34">
-        <foreignObject
-           style="overflow:visible;"
-           pointer-events="all"
-           width="52"
-           height="40"
-           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-          <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 52px; white-space: nowrap; word-wrap: normal; text-align: center;">
-            <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;"><xhtml:div>
-  <xhtml:br />
-</xhtml:div>
-PLUGIN<xhtml:div>STORE 1</xhtml:div>
-</xhtml:div>
-          </xhtml:div>
-        </foreignObject>
-        <text
-           x="26"
-           y="26"
-           font-size="12px"
-           id="text36"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">PLUGIN</text>
-      </switch>
-    </g>
-    <path
-       d="M 481 261 L 521 261 L 521 251 L 554.63 251"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path38"
-       stroke="#000000"
-       fill="none" />
-    <path
-       d="M 559.88 251 L 552.88 254.5 L 554.63 251 L 552.88 247.5 Z"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path40"
-       stroke="#000000"
-       fill="#000000" />
-    <path
-       d="M 421 291 L 406 291 L 406 313.63"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path42"
-       stroke="#000000"
-       fill="none" />
-    <path
-       d="M 406 318.88 L 402.5 311.88 L 406 313.63 L 409.5 311.88 Z"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path44"
-       stroke="#000000"
-       fill="#000000" />
+       id="path47" />
     <rect
-       x="361"
-       y="231"
+       x="2"
+       y="97"
        width="120"
        height="60"
        rx="9"
        ry="9"
-       pointer-events="none"
-       id="rect46"
+       fill="#000000"
        stroke="#000000"
-       fill="#ffffff" />
-    <g
-       transform="translate(392.5,247.5)"
-       id="g48">
-      <switch
-         id="switch50">
-        <foreignObject
-           style="overflow:visible;"
-           pointer-events="all"
-           width="56"
-           height="26"
-           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-          <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 56px; white-space: nowrap; word-wrap: normal; text-align: center;">
-            <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;">PLUGIN<xhtml:div>CATALOG</xhtml:div>
-</xhtml:div>
-          </xhtml:div>
-        </foreignObject>
-        <text
-           x="28"
-           y="19"
-           font-size="12px"
-           id="text52"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">CATALOG</text>
-      </switch>
-    </g>
-    <path
-       d="M 556 17 C 556 -4.33 626 -4.33 626 17 L 626 65 C 626 86.33 556 86.33 556 65 Z"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path54"
-       stroke="#000000"
-       fill="#ffffff" />
-    <path
-       d="M 556 17 C 556 33 626 33 626 17"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path56"
-       stroke="#000000"
-       fill="none" />
-    <path
-       d="M 481 71 L 519 71 L 519 41 L 549.63 41"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path64"
-       stroke="#000000"
-       fill="none" />
-    <path
-       d="M 554.88 41 L 547.88 44.5 L 549.63 41 L 547.88 37.5 Z"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path66"
-       stroke="#000000"
-       fill="#000000" />
+       transform="translate(2,3)"
+       opacity="0.25"
+       id="rect49" />
     <rect
-       x="361"
-       y="41"
+       x="2"
+       y="97"
        width="120"
        height="60"
        rx="9"
        ry="9"
-       pointer-events="none"
-       id="rect68"
+       fill="#ffffff"
        stroke="#000000"
-       fill="#ffffff" />
+       pointer-events="none"
+       id="rect51" />
     <g
-       transform="translate(371.31121,49.651414)"
-       id="g70">
+       transform="translate(12.217833,109.10271)"
+       id="g53">
       <switch
-         id="switch72">
+         id="switch55">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
@@ -298,92 +245,213 @@ PLUGIN<xhtml:div>STORE 1</xhtml:div>
            x="51"
            y="19"
            font-size="12px"
-           id="text74"
+           id="text57"
            style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">COLLABORATION</text>
-        <text
-           x="49.639278"
-           y="30.600676"
-           font-size="12px"
-           id="text74-3"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">SERVICE</text>
       </switch>
     </g>
     <path
-       d="M 561 332 C 561 310.67 621 310.67 621 332 L 621 380 C 621 401.33 561 401.33 561 380 Z"
+       d="M 222.67 97 L 222.67 88.37"
+       fill="none"
+       stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path76"
-       stroke="#000000"
-       fill="#ffffff" />
+       id="path59" />
     <path
-       d="M 561 332 C 561 348 621 348 621 332"
+       d="M 222.67 83.12 L 226.17 90.12 L 222.67 88.37 L 219.17 90.12 Z"
+       fill="#000000"
+       stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path78"
+       id="path61" />
+    <rect
+       x="162"
+       y="97"
+       width="120"
+       height="60"
+       rx="9"
+       ry="9"
+       fill="#000000"
        stroke="#000000"
-       fill="none" />
+       transform="translate(2,3)"
+       opacity="0.25"
+       id="rect63" />
+    <rect
+       x="162"
+       y="97"
+       width="120"
+       height="60"
+       rx="9"
+       ry="9"
+       fill="#ffffff"
+       stroke="#000000"
+       pointer-events="none"
+       id="rect65" />
     <g
-       transform="translate(564.5,335.5)"
-       id="g80">
+       transform="translate(192.5,112.5)"
+       id="g67">
       <switch
-         id="switch82">
+         id="switch69">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
-           width="52"
-           height="40"
+           width="56"
+           height="26"
            requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
           <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 52px; white-space: nowrap; word-wrap: normal; text-align: center;">
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 56px; white-space: nowrap; word-wrap: normal; text-align: center;">
             <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;"><xhtml:div>
-  <xhtml:br />
-</xhtml:div>
-PLUGIN<xhtml:div>STORE 2</xhtml:div>
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">PLUGIN<xhtml:div>CATALOG</xhtml:div>
 </xhtml:div>
           </xhtml:div>
         </foreignObject>
         <text
-           x="26"
-           y="26"
+           x="28"
+           y="19"
            font-size="12px"
-           id="text84"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">PLUGIN</text>
+           id="text71"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">PLUGIN CATALOG 1</text>
       </switch>
     </g>
     <path
-       d="M 505 173 L 536 173 L 536 151 L 554.63 151"
+       d="M 377.67 97 L 377.67 88.37"
+       fill="none"
+       stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path86"
-       stroke="#000000"
-       fill="none" />
+       id="path73" />
     <path
-       d="M 559.88 151 L 552.88 154.5 L 554.63 151 L 552.88 147.5 Z"
+       d="M 377.67 83.12 L 381.17 90.12 L 377.67 88.37 L 374.17 90.12 Z"
+       fill="#000000"
+       stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path88"
+       id="path75" />
+    <rect
+       x="317"
+       y="97"
+       width="120"
+       height="60"
+       rx="9"
+       ry="9"
+       fill="#000000"
        stroke="#000000"
-       fill="#000000" />
-    <path
-       d="M 561 127 C 561 105.67 621 105.67 621 127 L 621 175 C 621 196.33 561 196.33 561 175 Z"
-       stroke-miterlimit="10"
+       transform="translate(2,3)"
+       opacity="0.25"
+       id="rect77" />
+    <rect
+       x="317"
+       y="97"
+       width="120"
+       height="60"
+       rx="9"
+       ry="9"
+       fill="#ffffff"
+       stroke="#000000"
        pointer-events="none"
-       id="path90"
-       stroke="#000000"
-       fill="#ffffff" />
-    <path
-       d="M 561 127 C 561 143 621 143 621 127"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path92"
-       stroke="#000000"
-       fill="none" />
+       id="rect79" />
     <g
-       transform="translate(563.5,137.5)"
-       id="g94">
+       transform="translate(342.5,112.5)"
+       id="g81">
       <switch
-         id="switch96">
+         id="switch83">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="66"
+           height="26"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 66px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">PLUGIN<xhtml:div>CATALOG 2</xhtml:div>
+</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="33"
+           y="19"
+           font-size="12px"
+           id="text85"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">PLUGIN CATALOG 2</text>
+      </switch>
+    </g>
+    <path
+       d="M 27 18 C 27 -3.33 97 -3.33 97 18 L 97 66 C 97 87.33 27 87.33 27 66 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       transform="translate(2,3)"
+       opacity="0.25"
+       id="path87" />
+    <path
+       d="M 27 18 C 27 -3.33 97 -3.33 97 18 L 97 66 C 97 87.33 27 87.33 27 66 Z"
+       fill="#ffffff"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path89" />
+    <path
+       d="M 27 18 C 27 34 97 34 97 18"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path91" />
+    <g
+       transform="translate(30.5,27.5)"
+       id="g93">
+      <switch
+         id="switch95">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="60"
+           height="26"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 60px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;"><xhtml:div>
+  <xhtml:br />
+</xhtml:div>
+FIREBASE</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="30"
+           y="19"
+           font-size="12px"
+           id="text97"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">FIREBASE</text>
+      </switch>
+    </g>
+    <path
+       d="M 501 17.86 C 501 -3.48 561 -3.48 561 17.86 L 561 65.86 C 561 87.19 501 87.19 501 65.86 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       transform="translate(2,3)"
+       opacity="0.25"
+       id="path99" />
+    <path
+       d="M 501 17.86 C 501 -3.48 561 -3.48 561 17.86 L 561 65.86 C 561 87.19 501 87.19 501 65.86 Z"
+       fill="#ffffff"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path101" />
+    <path
+       d="M 501 17.86 C 501 33.86 561 33.86 561 17.86"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path103" />
+    <g
+       transform="translate(502.5,27.5)"
+       id="g105">
+      <switch
+         id="switch107">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
@@ -403,70 +471,160 @@ USER DB</xhtml:div>
            x="27"
            y="19"
            font-size="12px"
-           id="text98"
+           id="text109"
            style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">USER DB</text>
       </switch>
     </g>
     <path
-       d="M 477 356 L 554.63 356"
-       stroke-miterlimit="10"
-       pointer-events="none"
-       id="path100"
+       d="M 192 18 C 192 -3.33 252 -3.33 252 18 L 252 66 C 252 87.33 192 87.33 192 66 Z"
+       fill="#000000"
        stroke="#000000"
-       fill="none" />
+       stroke-miterlimit="10"
+       transform="translate(2,3)"
+       opacity="0.25"
+       id="path111" />
     <path
-       d="M 559.88 356 L 552.88 359.5 L 554.63 356 L 552.88 352.5 Z"
+       d="M 192 18 C 192 -3.33 252 -3.33 252 18 L 252 66 C 252 87.33 192 87.33 192 66 Z"
+       fill="#ffffff"
+       stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path102"
-       stroke="#000000"
-       fill="#000000" />
+       id="path113" />
     <path
-       d="M 383.5 333.5 C 353.5 333.5 346 356 370 360.5 C 346 370.4 373 392 392.5 383 C 406 401 451 401 466 383 C 496 383 496 365 477.25 356 C 496 338 466 320 439.75 329 C 421 315.5 391 315.5 383.5 333.5 Z"
+       d="M 192 18 C 192 34 252 34 252 18"
+       fill="none"
+       stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path104"
-       stroke="#000000"
-       fill="#ffffff" />
+       id="path115" />
     <g
-       transform="translate(347.9269,334.81568)"
-       id="g106">
+       transform="translate(194.5,20.5)"
+       id="g117">
       <switch
-         id="switch108">
+         id="switch119">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
-           width="146"
-           height="26"
+           width="52"
+           height="40"
            requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
           <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 146px; white-space: normal; word-wrap: normal; text-align: center;">
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 52px; white-space: nowrap; word-wrap: normal; text-align: center;">
             <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;">PLUGIN <xhtml:span
-   style="line-height: 1.2">REMOTE SERVER</xhtml:span>
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;"><xhtml:div>
+  <xhtml:br />
+</xhtml:div>
+PLUGIN<xhtml:div>STORE 1</xhtml:div>
 </xhtml:div>
           </xhtml:div>
         </foreignObject>
         <text
-           x="73"
-           y="19"
+           x="26"
+           y="26"
            font-size="12px"
-           id="text110"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">REMOTE CATALOG</text>
+           id="text121"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">PLUGIN</text>
       </switch>
     </g>
     <path
-       d="M 398.5 138.5 C 368.5 138.5 361 161 385 165.5 C 361 175.4 388 197 407.5 188 C 421 206 466 206 481 188 C 511 188 511 170 492.25 161 C 511 143 481 125 454.75 134 C 436 120.5 406 120.5 398.5 138.5 Z"
+       d="M 347 18 C 347 -3.33 407 -3.33 407 18 L 407 66 C 407 87.33 347 87.33 347 66 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       transform="translate(2,3)"
+       opacity="0.25"
+       id="path123" />
+    <path
+       d="M 347 18 C 347 -3.33 407 -3.33 407 18 L 407 66 C 407 87.33 347 87.33 347 66 Z"
+       fill="#ffffff"
+       stroke="#000000"
        stroke-miterlimit="10"
        pointer-events="none"
-       id="path112"
+       id="path125" />
+    <path
+       d="M 347 18 C 347 34 407 34 407 18"
+       fill="none"
        stroke="#000000"
-       fill="#ffffff" />
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path127" />
+    <rect
+       x="393.47482"
+       y="97.720673"
+       width="32"
+       height="15"
+       rx="2.25"
+       ry="2.25"
+       pointer-events="none"
+       id="rect135"
+       style="fill:#ffe6cc;stroke:#d79b00" />
     <g
-       transform="translate(386.5,154.5)"
-       id="g114">
+       transform="translate(393.97483,98.220674)"
+       id="g137">
       <switch
-         id="switch116">
+         id="switch139">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="28"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 30px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">FaaS</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="14"
+           y="12"
+           font-size="12px"
+           id="text141"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">FaaS</text>
+      </switch>
+    </g>
+    <path
+       d="M 531 97 L 531 88.37"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path143" />
+    <path
+       d="M 531 83.12 L 534.5 90.12 L 531 88.37 L 527.5 90.12 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path145" />
+    <rect
+       x="471"
+       y="97"
+       width="120"
+       height="60"
+       rx="9"
+       ry="9"
+       fill="#000000"
+       stroke="#000000"
+       transform="translate(2,3)"
+       opacity="0.25"
+       id="rect147" />
+    <rect
+       x="471"
+       y="97"
+       width="120"
+       height="60"
+       rx="9"
+       ry="9"
+       fill="#ffffff"
+       stroke="#000000"
+       pointer-events="none"
+       id="rect149" />
+    <g
+       transform="translate(480.5,119.5)"
+       id="g151">
+      <switch
+         id="switch153">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
@@ -476,24 +634,129 @@ USER DB</xhtml:div>
           <xhtml:div
              style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 98px; white-space: nowrap; word-wrap: normal; text-align: center;">
             <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;">USER MANAGER</xhtml:div>
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:div>USER MANAGER</xhtml:div>
+            </xhtml:div>
           </xhtml:div>
         </foreignObject>
         <text
            x="49"
            y="12"
            font-size="12px"
-           id="text118"
-           text-anchor="middle"
-           font-family="Helvetica"
-           fill="#000000">USER MANAGER</text>
+           id="text155"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">USER MANAGER</text>
+      </switch>
+    </g>
+    <rect
+       x="239.30136"
+       y="97.679459"
+       width="32"
+       height="15"
+       rx="2.25"
+       ry="2.25"
+       pointer-events="none"
+       id="rect157"
+       style="fill:#ffe6cc;stroke:#d79b00" />
+    <g
+       transform="translate(239.80135,98.179458)"
+       id="g159">
+      <switch
+         id="switch161">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="28"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 30px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">FaaS</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="14"
+           y="12"
+           font-size="12px"
+           id="text163"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">FaaS</text>
+      </switch>
+    </g>
+    <rect
+       x="79.717834"
+       y="97.679459"
+       width="32"
+       height="15"
+       rx="2.25"
+       ry="2.25"
+       pointer-events="none"
+       id="rect165"
+       style="fill:#ffe6cc;stroke:#d79b00" />
+    <g
+       transform="translate(80.217833,98.179458)"
+       id="g167">
+      <switch
+         id="switch169">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="28"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 30px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">FaaS</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="14"
+           y="12"
+           font-size="12px"
+           id="text171"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">FaaS</text>
+      </switch>
+    </g>
+    <rect
+       x="551.52594"
+       y="97"
+       width="32"
+       height="15"
+       rx="2.25"
+       ry="2.25"
+       pointer-events="none"
+       id="rect173"
+       style="fill:#ffe6cc;stroke:#d79b00" />
+    <g
+       transform="translate(552.7246,97.160271)"
+       id="g175">
+      <switch
+         id="switch177">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="30"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 30px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">BaaS</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="15"
+           y="12"
+           font-size="12px"
+           id="text179"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">BaaS</text>
       </switch>
     </g>
     <g
-       transform="translate(553.61677,35.291383)"
-       id="g70-6">
+       transform="translate(11.05197,122.46993)"
+       id="g53-3">
       <switch
-         id="switch72-7">
+         id="switch55-6">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
@@ -508,24 +771,18 @@ USER DB</xhtml:div>
           </xhtml:div>
         </foreignObject>
         <text
-           x="38.925251"
+           x="51"
            y="19"
            font-size="12px"
-           id="text74-5"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">FIREBASE</text>
-        <text
-           x="49.639278"
-           y="30.600676"
-           font-size="12px"
-           id="text74-3-3"
+           id="text57-7"
            style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">SERVICE</text>
       </switch>
     </g>
     <g
-       transform="translate(565.87445,243.22188)"
-       id="g32-1">
+       transform="translate(194.91733,33.934948)"
+       id="g117-5">
       <switch
-         id="switch34-2">
+         id="switch119-3">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
@@ -547,15 +804,15 @@ PLUGIN<xhtml:div>STORE 1</xhtml:div>
            x="26"
            y="26"
            font-size="12px"
-           id="text36-7"
+           id="text121-5"
            style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">STORE 1</text>
       </switch>
     </g>
     <g
-       transform="translate(563.86907,347.66844)"
-       id="g80-0">
+       transform="translate(350.47238,21.10235)"
+       id="g117-6">
       <switch
-         id="switch82-9">
+         id="switch119-2">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
@@ -569,7 +826,7 @@ PLUGIN<xhtml:div>STORE 1</xhtml:div>
   <xhtml:br />
 </xhtml:div>
 
-PLUGIN<xhtml:div>STORE 2</xhtml:div>
+PLUGIN<xhtml:div>STORE 1</xhtml:div>
 </xhtml:div>
           </xhtml:div>
         </foreignObject>
@@ -577,35 +834,39 @@ PLUGIN<xhtml:div>STORE 2</xhtml:div>
            x="26"
            y="26"
            font-size="12px"
-           id="text84-3"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">STORE 2</text>
+           id="text121-9"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">PLUGIN</text>
       </switch>
     </g>
     <g
-       transform="translate(349.46656,348.59858)"
-       id="g106-6">
+       transform="translate(350.88971,34.537298)"
+       id="g117-5-1">
       <switch
-         id="switch108-0">
+         id="switch119-3-2">
         <foreignObject
            style="overflow:visible;"
            pointer-events="all"
-           width="146"
-           height="26"
+           width="52"
+           height="40"
            requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
           <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 146px; white-space: normal; word-wrap: normal; text-align: center;">
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 52px; white-space: nowrap; word-wrap: normal; text-align: center;">
             <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;">PLUGIN <xhtml:span
-   style="line-height: 1.2">REMOTE SERVER</xhtml:span>
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;"><xhtml:div>
+  <xhtml:br />
+</xhtml:div>
+
+
+PLUGIN<xhtml:div>STORE 1</xhtml:div>
 </xhtml:div>
           </xhtml:div>
         </foreignObject>
         <text
-           x="73"
-           y="19"
+           x="26"
+           y="26"
            font-size="12px"
-           id="text110-6"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">PLUGIN</text>
+           id="text121-5-7"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">STORE 2</text>
       </switch>
     </g>
   </g>

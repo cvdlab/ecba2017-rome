@@ -26,9 +26,71 @@ In Figure~\ref{fig_serverless} there is the architectural schema described above
 
 \subsection{Centralized Application State}\label{ssub:centr_state}
 
-blabla
+The application exploits the \textbf{unidirectional data flow pattern} to gain great benefits in terms of maintainability of the software objects, due to the lightness of the resulting architecture. As requested by the pattern, the software has to be based on a \textbf{centralized state}, which represents the application logic. Consequently, every feature has as its unique goal the obtainment of a new state coherent with the requested change, following various mechanisms based on \textbf{actions} (each one containing the data for the new state) and \textbf{reducers} (software objects that can write the new state) provided by the \textbf{Redux.js}\footnote{http://redux.js.org/} library. Usually, the unidirectional data flow pattern is associated with the \textbf{Immutability pattern}, which contributes to maintainability, avoiding side effects for state changes and providing smaller tests for application logic changes. We also benefits of undo/redo operations to an oldest/newer state by means of a replace of the current state with the previous/next one. As a consequence, the state can be seen as an \textbf{immutable tree structure} whose changes require: (i) The build of a new state \texttt{s'} equal to the previous state \texttt{s}; (ii) Execution of changes on the new state \texttt{s'}; (iii) Reference replacement from \texttt{s} to \texttt{s'}. Despite its simplicity, this pattern can nevertheless lead to memory waste, so we used the \textbf{Immutable.js}\footnote{https://facebook.github.io/immutable-js/} library (made by facebook), which exploits structural sharing via hash maps tries and vector tries minimizing the need to copy or cache data.
+In our application, the state contains all the parts that there are on a plan, giving life to a finite state machine of all possible evolutions of the application state, where each node correspond to a \textbf{mode} (and consequently to a possible application state), and each edge correspond to an action from that point (which in our case is typically a javascript event such as \texttt{click} or \texttt{mousemove}). A part of the state machine is shown in figure~\ref{fig_uc_draw_wall}. How we can see there are three nodes corresponding to three modes: (i) Node \texttt{idle}: waiting mode of the application. No action has been taken yet. (ii) Node \texttt{waiting\_drawing\_wall}: user has selected wall design tool, but he hasn't started the draw phase yet. (iii) Node \texttt{drawing\_wall}: user has placed the starting point of the wall.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.6\linewidth]{contents/images/uc_draw_wall}
+
+\caption{Subgraph of the state machine that show a wall creation.}
+\label{fig_uc_draw_wall}
+\end{figure}
 
 \subsection{Component Based UI}
 
 
-blabla
+The entire application has been developed using separated modules, following the \textbf{SOLID programming} principles, as it could be expanded. For the web part, we have used the \textbf{web components pattern}, with the implementation of \textbf{React.js}\footnote{https://github.com/facebook/react} written by Facebook. The main idea is to define the frontend application as a collection of components, each one rendered in a different way according with values assigned to the state. In Figure~\ref{fig_ui} se can see the user interface of the application with the most interesting components: the toolbar (where every button is another component), the sidebar and the 2D viewer:
+
+we have an example of based on our application.\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{contents/images/ui}\\
+\caption{User interface of the application}
+\label{fig_ui}
+\end{figure}
+
+In particular, the most interesting components developed by us are the \textbf{viewers}, for example the 2D-viewer and the 3D-viewer. This component-based structure, allows us to define whatever state definition (for example in a tabular form) simply adding a new component.\\
+
+The viewers structure is outlined in figure~\ref{fig_viewers}, where we can observe the great blocks. The first one is the \textit{catalog} and as we have already seen in section~\ref{building_elements} it contains all the building elements with their properties. We also see the application \textit{core}, which manages the state and contains all drawing functionalities, and can instantiate several different viewers giving them the state for the representation. It communicates with the catalog taking the building models properties. At least we have the \textit{viewers}, that are chosen observing the current state mode (see section~\ref{sec:central_state}). At the moment we implemented the 2D and 3D viewers (see figure~\ref{fig_viewer})\\\\
+\textbf{2D Viewer}. This viewer creates a 2D view of the building model. Given the state, it exploit the \textbf{Virtual DOM} (see~\cite{vdom}) implemented by React.js, to update only changed parts avoiding continuously global updates. All elements are rendered using SVG DOM tag. To perform pan and zoom operations, typically necessary in this kind of tool, we used ReactSVGPanZoom~\footnote{https://github.com/chrvadala/react-svg-pan-zoom} a React component that adds pan and zoom features to SVG and helps to display big SVG images in a small space. It use affine matrix Math and event browser detection to adjust the image size to the required scale.\\\\
+\textbf{3D Viewer}. It exploits the WEBGL-based modeling library \textbf{Three.js}~\footnote{https://threejs.org/} to build a 3D view of our building. To avoid global refreshes every time we update a part of the state, it has been implemented a \texttt{diff} and \textit{patch} system standardized in~\cite{rfc6902}. So it has been implemented a data structure that maps the Three.js objects with the building elements inside the state. Every time the user launches a Redux.js action, the application compute the difference between the old state and the new one a redraw only the changed objects. In particular we can have the following \textit{operations}: (i) \textbf{add}, (ii) \textbf{replace} and (iii) \textbf{remove}. For every operation it is determined a behavior based on the changed building element, changing also related building elements.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\linewidth]{contents/images/diagramma-visualizzatori}
+
+\caption{The architectural schema for the viewers}
+\label{fig_viewers}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\linewidth]{contents/images/2d-viewer}
+\includegraphics[width=0.45\linewidth]{contents/images/3d-viewer}
+\caption{The 2D and 3D viewers for the state}
+\label{fig_viewer}
+\end{figure}
+
+\subsection{Building elements}\label{building_elements}
+
+As we have discussed in section~\ref{sec:related_work}, modeling things can be difficult due to the 3D interactions required by tools. Consequently, we have tried to move the modeling complexity from the user to the developer, which is usually an expert of this field, with the creation of a \textbf{building element catalog}. In this way, one can add parts of the model simply  the catalog is structured in categories and contains a list of \textbf{building elements}, each one representing an object we can add to our building. Each building element is represented using the following fields:
+
+\textbf{Name:} the name of the building element chosen
+
+\textbf{2D rendering function:} a function returning a 2D representation of this building element
+
+\textbf{3D rendering function:} a function returning a 3D representation of this building element
+
+\textbf{Properties:} the properties exposed by the building element and used by the user for customization\\
+
+Moreover, the building element is associated with a \textbf{prototype}, which is the type of the element to represent. For our modeling purposes, we have identified four prototypes (so all representable elements can belong to only one of four fundamental types):
+
+\textbf{Walls}, each kind of wall (perimeter, interior, structural) belongs to this category. The user can add a new wall selecting the start point and the end point of the element. The internal state of all the walls correspond to an undirected graph: each \textbf{node} represents a coordinate for an end of the wall, each \textbf{edge} match a specific wall. This internal representation helps us to provide a drag and drop interaction for this element type, in fact each drag is performed by means of a relocation od a node that cause, other that the displacement of the requested wall, a displacement of each adjacent wall.
+
+\textbf{Openings}, each element that makes a hole in a wall (windows, doors, arches) belongs to this category. The user can add a new opening thanks to a snap on an existent wall. The openings internal state link each element with its wall.
+
+\textbf{Areas}, each floor belong to this category. They are automatically generated thanks to an analysis of the wall graph. The algorithm is composed by the following phases: (i) Search of biconnected component by mean of Hopcroft-Tarjan algorithm~(see \cite{Hopcroft:1973:AEA:362248.362272}); (ii) Removal of edges that are not part of a biconnected component; (iii) Search of all cycles through an algorithm that do a double check of each edges sorted by angle; (iv) Search of maximal cycles correspondent to perimeter edges by an application of Gauss's area formula; (v) Removal of maximal cycles;
+
+\textbf{Objects}, each element that can be arranged on an area is part of this category. The user can interact with the object and change its disposal and rotation.

@@ -1,16 +1,22 @@
 \section{Application Experience}\label{sec:application}
 
-blabla
+The aim of this application is to lead the user to the realization of a building model through description of the 2D plan in order to simplify the user work, as he does not need to do difficult 3D interactions but only 2D drawings. To follow this idea, we chose to create our buildings through \textbf{symbolic modeling} which consists in the creation of placeholders for a particular object, leaving to the platform developer the modeling interactions needed to transform the placeholders into the wanted 2D/3D model. So the the user only need to drag and drop an object into the drawing area or to draw the wireframe, depending on the type of object he is interested in. All this objects are also grouped on \textbf{layers}, which can have different altitudes and opacity.
 
+\subsection{Building Elements Catalog}\label{ssec:catalog}
+
+As we have seen earlier, the software relies on a library of symbolic elements to replace 3D interactions, they are collected in a \textbf{building elements catalog} containing four element typologies (from now we will refer to an element contained in the catalog as \textbf{building element}). Each typology has been identified studying the various user interactions and the way an object can be placed in the space:
+
+\textbf{Lines} Each line is drawn by selection of a start point and of an end point and we can have two ways to move this type of building element. The first one is by dragging one of the points, the other one is by dragging the entire line. For example walls are elements belonging to this category
+
+\textbf{Openings} Each opening is an element that is linked to a line, making an hole on it. The user create a new opening dragging it on a chosen line. Doors and windows on walls are elements belonging to this category
+
+\textbf{Areas} Each area is an element which is automatically generated from walls. Basements belongs to this category
+
+\textbf{Objects} Each element which is freely inserted into space with a drag and drop interaction is an object
 
 
 \subsection{User Interface}\label{ssec:ui}
 
 blabla
 
-
-
-\subsection{Building Elements Catalog}\label{ssec:catalog}
-
-blabla
 

@@ -11,16 +11,25 @@ The tool also has support for layers the user can exploit to organize her projec
 The catalog comprises four types of elements, grouped according to both inherent characteristics and user interaction needed to add it to the project and configure it.
 
 \begin{itemize}
-\item \emph{Lines}. Each line is drawn by selection of a start point and of an end point and we can have two ways to move this type of building element. The first one is by dragging one of the points, the other one is by dragging the entire line. An example: a \emph{wall}.
+\item \emph{Lines}. An element which belongs to this category is drawn selecting a start point and an end point. To move this element one can drags one of the end point or can drags the entire line. An example: a \emph{wall}.
 
 \item \emph{Openings}. Each opening is an element that is linked to an element of the \emph{line} type, making an hole on it. The user create a new opening dragging it on a chosen line. Examples are \emph{doors} and \emph{windows}.
 
-\item \emph{Areas}. Each area is an element which is automatically generated from walls. An example is the \emph{basement}.
+\item \emph{Areas}. Each area is an element which is automatically generated from walls. An example: the \emph{basement}.
 
-\item \emph{Objects}. Each element which is freely inserted into space with a drag and drop interaction is an object
+\item \emph{Objects}. Each element which is freely inserted into space with a drag and drop interaction is an object. Examples are tables and chairs.
 \end{itemize}
 
 \subsection{User Interface}\label{ssec:ui}
 
-Figure~\ref{FIGURA DELL'INTERFACCIA} show the application user interface. It consist of ...
+Figure~\ref{fig2D} show the application user interface. It consists of the following components: 
 
+\textbf{Toolbar:} it contains the button buttons mapping all operations the user can do in that context
+
+\textbf{Sidebar:} it contains all elements in the current layer, the layer list and the properties for the selected building element
+
+\textbf{Content area}: it supports all the 2D interactions for the user. Inside this area we can see the current plan with placeholders for all building elements\\
+
+Figure~\ref{figCatalogo} shows the building element catalog. When the user select one of the boxes, the application returns to the 2D area and starts the interaction for the chosen building element.
+
+Figures~\ref{fig3D},~\ref{figPalazzo},~\ref{figAltro3D} show some examples of 3D visualization.

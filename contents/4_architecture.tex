@@ -1,16 +1,17 @@
 \section{Serverless Architecture}\label{sec:architecture}
 
-We used a Serverless Architecture to deploy all the work.
+We used a Serverless Architecture to deploy all the work. L'intero sistema viene distribuito sfruttando sistemi "as a service" come le CDN, BaaS e FaaS, delegando la gestione dell'infrastruttura hardware e di manutenzione ai rispettivi fornitori di servizi.
 
-To offer the application to end-users with high availability and high performance we deployed all Javascript files that are part of the system into a CDN (Content Delivery Network). This single point of deploy offered us a centralized method to upgrade all customers applications, whereby there is a new version, without any customer explicit action.
+To offer the application to end-users with high availability and high performance we deployed all Javascript files that are part of the system into a CDN (Content Delivery Network). This single point of deploy offered us a centralized method to upgrade all customers applications without any customer explicit action.
 
 To perform CPU intensive operations, necessary to make complex geometric element, we used a third party FaaS system that run Python functions and that generate 3D elements. Thank to this we can scale up and down and adjust the CPU load on the traffic.
 
-The application is distributed as frontend web application and so it's mostly executed into customer's browser. This has the following advantages: (i) to avoid user hard installation or updating typically performed by not technical users; (ii) to offer a good abstraction level that makes the application platform and operation system independent;  (iii) to avoid a server overloading by moving heavy computations on the user client.
-
-The application state is mostly inside the customer's browser and it is represented as a tree structured object. This state can be serialized and saved on a BaaS system or downloaded as JSON file. The customer can restore the application state in any time using a preceding downloaded serialized version of the state. The system will adjust the user interface and the scene by means of the Virtual DOM and the diff and patch algorithm.
-
 The collaboration part is based on a DBaaS, with the common state stored in an external DB provided by Firebase. Following this methodology we could also add user authentication features based on external BaaS providing all user management functionalities.
+
+The application is distributed as frontend web application and so it's mostly executed into customer's browser. The application state is inside the customer's browser and it is represented as a tree structured object. This state can be serialized and saved on a BaaS system or downloaded as JSON file. The customer can restore the application state in any time using a preceding downloaded serialized version of the state. The system will adjust the user interface and the scene by means of the Virtual DOM and the diff and patch algorithm. Il server quindi si rivela necessario solo nei rari casi in cui l'utente opta per un salvataggio online.
+
+
+L'intero stato dell'applicazione completamente serializzabile come documento permette di eseguire la modellazione 2D all'interno del frontend e di contattare il server solamente per il salvataggio del dato. La serializzazione dello stato come JSON  abilita l'utilizzo di molteplici sistemi per il salvataggio dei dati, in quanto non viene richiesto un backend personalizzato, ma può esser utilizzato un qualsiasi DBaaS a patto che supporti il savataggio di JSON. Il progetto è stato realizzato connettendo i dati tramite Firebase.
 
 In Figure~\ref{fig_serverless} there is the architectural schema described above\\\\
 
@@ -23,8 +24,12 @@ In Figure~\ref{fig_serverless} there is the architectural schema described above
 \end{figure}
 
 
-
 \subsection{Centralized Application State}\label{ssub:centr_state}
+
+Per abilitare il supporto alla serializzazione del dato è necessario lavorare attraverso un unico stato centralizzato nel quale vengono memorizzate tutte le informazioni. Ciò è stato possibile utilizzando il pattern \textbf{unidirectional data flow pattern}.
+Questa scelta ha anche portato dei benefici nell'architettura complessiva del sistema che può essere suddivisa in 3 macroblocchi: (i) la parte logica, (ii) la visualizzazione 2D (iii) la visualizzazione 3d. Un precedente esperimento di sviluppo di un progetto simile \footnote{https://github.com/cvdlab/walle} che non utilizzava questo approccio ha evidenziato un accoppiamento tra il motore logico e la UI. Lo sviluppo di una nuova funzionalità richiedeva anche lo sviluppo di procedure che attraverso listener aggiornavano l'interfaccia adeguandola al cambiamento.
+
+
 
 The application exploits the \textbf{unidirectional data flow pattern} to gain great benefits in terms of maintainability of the software objects, due to the lightness of the resulting architecture. As requested by the pattern, the software has to be based on a \textbf{centralized state}, which represents the application logic. Consequently, every feature has as its unique goal the obtainment of a new state coherent with the requested change, following various mechanisms based on \textbf{actions} (each one containing the data for the new state) and \textbf{reducers} (software objects that can write the new state) provided by the \textbf{Redux.js}\footnote{http://redux.js.org/} library. Usually, the unidirectional data flow pattern is associated with the \textbf{Immutability pattern}, which contributes to maintainability, avoiding side effects for state changes and providing smaller tests for application logic changes. We also benefits of undo/redo operations to an oldest/newer state by means of a replace of the current state with the previous/next one. As a consequence, the state can be seen as an \textbf{immutable tree structure} whose changes require: (i) The build of a new state \texttt{s'} equal to the previous state \texttt{s}; (ii) Execution of changes on the new state \texttt{s'}; (iii) Reference replacement from \texttt{s} to \texttt{s'}. Despite its simplicity, this pattern can nevertheless lead to memory waste, so we used the \textbf{Immutable.js}\footnote{https://facebook.github.io/immutable-js/} library (made by facebook), which exploits structural sharing via hash maps tries and vector tries minimizing the need to copy or cache data.
 In our application, the state contains all the parts that there are on a plan, giving life to a finite state machine of all possible evolutions of the application state, where each node correspond to a \textbf{mode} (and consequently to a possible application state), and each edge correspond to an action from that point (which in our case is typically a javascript event such as \texttt{click} or \texttt{mousemove}). A part of the state machine is shown in figure~\ref{fig_uc_draw_wall}. How we can see there are three nodes corresponding to three modes: (i) Node \texttt{idle}: waiting mode of the application. No action has been taken yet. (ii) Node \texttt{waiting\_drawing\_wall}: user has selected wall design tool, but he hasn't started the draw phase yet. (iii) Node \texttt{drawing\_wall}: user has placed the starting point of the wall.

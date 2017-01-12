@@ -6,12 +6,12 @@ Once the floorplan has been defined according to the \emph{place-and-configure} 
 
 The tool also has support for layers the user can exploit to organize her project, for example to group together semantically homogenous elements.
 
-\subsection{Building Elements Catalog}\label{ssec:elements}
+\subsection{Building Elements}\label{ssec:elements}
 
-The catalog comprises four types of elements, grouped according to both inherent characteristics and user interaction needed to add it to the project and configure it.
+Along with the aforementioned 2D and 3D generating functions, an elements is fully specified by its univocal name and its properties, used by the user for customization. Each building element inherits from its \emph{prototype} (one and only one). In the prototype are mapped both the inherent characteristics and user interactions needed to add the element to the project and/or configure it.
 
 \begin{itemize}
-\item \emph{Lines}. An element which belongs to this category is drawn selecting a start point and an end point. To move this element one can drags one of the end point or can drags the entire line. An example: a \emph{wall}.
+\item \emph{Lines}. Each line is drawn by selection of a start point and of an end point and we can have two ways to move this type of building element. The first one is by dragging one of the points, the other one is by dragging the entire line. An example: a \emph{wall}.
 
 \item \emph{Openings}. Each opening is an element that is linked to an element of the \emph{line} type, making an hole on it. The user create a new opening dragging it on a chosen line. Examples are \emph{doors} and \emph{windows}.
 
@@ -20,9 +20,25 @@ The catalog comprises four types of elements, grouped according to both inherent
 \item \emph{Objects}. Each element which is freely inserted into space with a drag and drop interaction is an object. Examples are tables and chairs.
 \end{itemize}
 
+
+
+The catalog comprises then four different types of elements:\\\\
+\noindent \emph{Lines}. Each line is drawn by selection of a start point and of an end point and we can have two ways to move this type of building element. The first one is by dragging one of the points, the other one is by dragging the entire line. An example: a \emph{wall}.\\\\
+\noindent \emph{Openings}. Each opening is an element that is linked to an element of the \emph{line} type, making an hole on it. The user create a new opening dragging it on a chosen line. Examples are \emph{doors} and \emph{windows}.\\\\
+\noindent \emph{Areas}. Each area is an element which is automatically generated from lines. An example is the \emph{basement}.\\\\
+\noindent \emph{Objects}. Each element which is freely inserted into space with a drag and drop interaction is an object\\\\
+The internal representation for Line types (e.g. walls) is undirected graph: each node maps coordinates of one tip of the line, each edge represents topological adjacency between vertex. This internal representation helps us to provide a drag and drop interaction for this element type, in fact each drag is performed by means of a relocation od a node that cause, other that the displacement of the requested wall, a displacement of each adjacent wall.
+
+
+Areas are automatically generated thanks to an analysis of the wall graph. The algorithm is composed by the following phases: (i) search of biconnected component by mean of Hopcroft-Tarjan algorithm~(see \cite{Hopcroft:1973:AEA:362248.362272}); (ii) removal of edges that are not part of a biconnected component; (iii) search of all cycles through an algorithm that do a double check of each edges sorted by angle; (iv) search of maximal cycles correspondent to perimeter edges by an application of Gauss's area formula; (v) removal of maximal cycles;
+
+
+MA COME SI FA A PARLARE DI LINES SE POI LE AREE SONO DEFINITE DAI WALLS?? DANILO SE TROVI UNA SPIEGAZIONE LOGICA TENIAMO LINES ALTRIMENTI SIAMO OBBLIGATI A CAMBIARE IN WALLS.
+
+
 \subsection{User Interface}\label{ssec:ui}
 
-Figure~\ref{fig2D} show the application user interface. It consists of the following components: 
+Figure~\ref{fig2D} show the application user interface. It consists of the following components:
 
 \textbf{Toolbar:} it contains the button buttons mapping all operations the user can do in that context
 

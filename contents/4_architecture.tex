@@ -1,8 +1,39 @@
 \section{Serverless Architecture}\label{sec:architecture}
 
-We used a Serverless Architecture to deploy all the work. L'intero sistema viene distribuito sfruttando sistemi "as a service" come le CDN, BaaS e FaaS, delegando la gestione dell'infrastruttura hardware e di manutenzione ai rispettivi fornitori di servizi.
+The architecture 
 
+
+l'architettura del sistema Ë serverless nel senso che non necessita la gestione da parte del ... di alcun server.
+
+curare numerosi aspetti, integrando servizi di terze parti "as-a-Service"-like che adempiono e rimpiazzano codice "propietario"/specifico: distribuzione, user management, models generation, users collaboration, state storage
+
+\subsubsection*{Distribution}
+
+distribution of the web application => webserver => CDN (Akamai)
+
+\subsubsection*{User Management}
+user management => backend => Backend-as-a-Service (Auth0)
+
+\subsubsection*{Model Generation}
+3D model generation of heavy building elements => backend => Function-as-a-Service (AWS lambda)
+
+\subsubsection*{Users Collaboration}
+users collaboration => backend => Backend-as-a-Service (Firebase)
+
+\subsubsection*{State Storage}
+state storage =>  DB => Compose.io (DA VERIFICARE)
+
+In particolare, la serializzazione/deserializzazione dello stato completo dell'applicazione Ë supportata da uno stato centralizzato.
+
+L'architettura software del frontend Ë reactive => gli passo lo stato ottenuto dal server, aggiorna tutta l'interfaccia.
+
+\iffalse
+We used a Serverless Architecture to deploy all the work. L'intero sistema viene distribuito sfruttando sistemi "as-a-Service" come le CDN, BaaS e FaaS, delegando la gestione dell'infrastruttura hardware e di manutenzione ai rispettivi fornitori di servizi.
+\fi
+
+\iffalse
 To offer the application to end-users with high availability and high performance we deployed all Javascript files that are part of the system into a CDN (Content Delivery Network). This single point of deploy offered us a centralized method to upgrade all customers applications without any customer explicit action.
+\fi
 
 To perform CPU intensive operations, necessary to make complex geometric element, we used a third party FaaS system that run Python functions and that generate 3D elements. Thank to this we can scale up and down and adjust the CPU load on the traffic.
 
@@ -13,15 +44,16 @@ The application is distributed as frontend web application and so it's mostly ex
 
 L'intero stato dell'applicazione completamente serializzabile come documento permette di eseguire la modellazione 2D all'interno del frontend e di contattare il server solamente per il salvataggio del dato. La serializzazione dello stato come JSON  abilita l'utilizzo di molteplici sistemi per il salvataggio dei dati, in quanto non viene richiesto un backend personalizzato, ma pu√≤ esser utilizzato un qualsiasi DBaaS a patto che supporti il savataggio di JSON. Il progetto √® stato realizzato connettendo i dati tramite Firebase.
 
-In Figure~\ref{fig_serverless} there is the architectural schema described above\\\\
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\linewidth]{contents/images/serverless-diagram}
-
-\caption{The serverless architecture for our application.}
-\label{fig_serverless}
-\end{figure}
+%
+% In Figure~\ref{fig_serverless} there is the architectural schema described above\\\\
+% 
+% \begin{figure}[htb]
+% \centering
+% \includegraphics[width=\linewidth]{contents/images/serverless-diagram}
+%
+% \caption{The serverless architecture for our application.}
+% \label{fig_serverless}
+% \end{figure}
 
 
 \subsection{Centralized Application State}\label{ssub:centr_state}
@@ -77,25 +109,3 @@ The viewers structure is outlined in figure~\ref{fig_viewers}, where we can obse
 \caption{The 2D and 3D viewers for the state}
 \label{fig_viewer}
 \end{figure}
-
-\subsection{Building elements}\label{building_elements}
-
-As we have discussed in section~\ref{sec:related_work}, modeling things can be difficult due to the 3D interactions required by tools. Consequently, we have tried to move the modeling complexity from the user to the developer, which is usually an expert of this field, with the creation of a \textbf{building element catalog}. In this way, one can add parts of the model simply  the catalog is structured in categories and contains a list of \textbf{building elements}, each one representing an object we can add to our building. Each building element is represented using the following fields:
-
-\textbf{Name:} the name of the building element chosen
-
-\textbf{2D rendering function:} a function returning a 2D representation of this building element
-
-\textbf{3D rendering function:} a function returning a 3D representation of this building element
-
-\textbf{Properties:} the properties exposed by the building element and used by the user for customization\\
-
-Moreover, the building element is associated with a \textbf{prototype}, which is the type of the element to represent. For our modeling purposes, we have identified four prototypes (so all representable elements can belong to only one of four fundamental types):
-
-\textbf{Walls}, each kind of wall (perimeter, interior, structural) belongs to this category. The user can add a new wall selecting the start point and the end point of the element. The internal state of all the walls correspond to an undirected graph: each \textbf{node} represents a coordinate for an end of the wall, each \textbf{edge} match a specific wall. This internal representation helps us to provide a drag and drop interaction for this element type, in fact each drag is performed by means of a relocation od a node that cause, other that the displacement of the requested wall, a displacement of each adjacent wall.
-
-\textbf{Openings}, each element that makes a hole in a wall (windows, doors, arches) belongs to this category. The user can add a new opening thanks to a snap on an existent wall. The openings internal state link each element with its wall.
-
-\textbf{Areas}, each floor belong to this category. They are automatically generated thanks to an analysis of the wall graph. The algorithm is composed by the following phases: (i) Search of biconnected component by mean of Hopcroft-Tarjan algorithm~(see \cite{Hopcroft:1973:AEA:362248.362272}); (ii) Removal of edges that are not part of a biconnected component; (iii) Search of all cycles through an algorithm that do a double check of each edges sorted by angle; (iv) Search of maximal cycles correspondent to perimeter edges by an application of Gauss's area formula; (v) Removal of maximal cycles;
-
-\textbf{Objects}, each element that can be arranged on an area is part of this category. The user can interact with the object and change its disposal and rotation.

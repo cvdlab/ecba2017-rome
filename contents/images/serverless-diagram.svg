@@ -38,13 +38,13 @@
      inkscape:window-height="715"
      id="namedview181"
      showgrid="false"
-     inkscape:zoom="0.7358804"
-     inkscape:cx="375.35286"
-     inkscape:cy="27.308783"
+     inkscape:zoom="1.4717608"
+     inkscape:cx="72.862842"
+     inkscape:cy="122.83372"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g17" />
+     inkscape:current-layer="switch169" />
   <defs
      id="defs4">
     <filter
@@ -414,6 +414,7 @@
                style="display:inline-block;text-align:inherit;text-decoration:inherit;"><xhtml:div>
   <xhtml:br />
 </xhtml:div>
+
 FIREBASE</xhtml:div>
           </xhtml:div>
         </foreignObject>
@@ -464,6 +465,7 @@ FIREBASE</xhtml:div>
                style="display:inline-block;text-align:inherit;text-decoration:inherit;"><xhtml:div>
   <xhtml:br />
 </xhtml:div>
+
 USER DB</xhtml:div>
           </xhtml:div>
         </foreignObject>
@@ -514,6 +516,7 @@ USER DB</xhtml:div>
                style="display:inline-block;text-align:inherit;text-decoration:inherit;"><xhtml:div>
   <xhtml:br />
 </xhtml:div>
+
 PLUGIN<xhtml:div>STORE 1</xhtml:div>
 </xhtml:div>
           </xhtml:div>
@@ -714,7 +717,7 @@ PLUGIN<xhtml:div>STORE 1</xhtml:div>
            y="12"
            font-size="12px"
            id="text171"
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">FaaS</text>
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">BaaS</text>
       </switch>
     </g>
     <rect
@@ -796,6 +799,7 @@ PLUGIN<xhtml:div>STORE 1</xhtml:div>
   <xhtml:br />
 </xhtml:div>
 
+
 PLUGIN<xhtml:div>STORE 1</xhtml:div>
 </xhtml:div>
           </xhtml:div>
@@ -826,6 +830,7 @@ PLUGIN<xhtml:div>STORE 1</xhtml:div>
   <xhtml:br />
 </xhtml:div>
 
+
 PLUGIN<xhtml:div>STORE 1</xhtml:div>
 </xhtml:div>
           </xhtml:div>
@@ -855,6 +860,7 @@ PLUGIN<xhtml:div>STORE 1</xhtml:div>
                style="display:inline-block;text-align:inherit;text-decoration:inherit;"><xhtml:div>
   <xhtml:br />
 </xhtml:div>
+
 
 
 PLUGIN<xhtml:div>STORE 1</xhtml:div>

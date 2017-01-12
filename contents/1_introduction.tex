@@ -10,10 +10,10 @@ In this work we report about our endeavor toward the definition of a Web based b
 
 A serverless architecture, on the contrary of what the name may suggest, actually employs many different specific servers, whose operation and maintenance don't burden on the project developer(s). These several servers can be seen as third party services (typically cloud-based) or functions executed into ephemeral containers (may only last for one invocation) to manage the internal state and server-side logic. Realtime interaction among users jointly working on the same modeling project, is for example achieved via a third party APIs for remote users collaboration.
 
-The tool user interface, entirely based on \textbf{web components pattern},  has been kept as simple as possible: the user is required to interact mainly with two-dimensional symbolic placeholders representing parts of the building, thus avoiding complex 3D interactions. 
-The modeling complexity is thus moved from the modeler to the developer which fills out an extendible \textbf{catalog} of customizable \textit{building elements}. The modeler has only to select the required element, place and parametrize it according to the requirements. It is obvious that a large number of building elements has to be provided to ensure the fulfillment of the most modeling requirements.
+The tool user interface, entirely based on web components pattern,  has been kept as simple as possible: the user is required to interact mainly with two-dimensional symbolic placeholders representing parts of the building, thus avoiding complex 3D interactions. 
+The modeling complexity is thus moved from the modeler to the developer which fills out an extendible \emph{catalog} of customizable \emph{building elements}. The modeler has only to select the required element, place and parametrize it according to the requirements. It is obvious that a large number of building elements has to be provided to ensure the fulfillment of the most modeling requirements.
 
-The remainder of this document is organized as follows. Section~\ref{sec:related_work} provides an overview of related work. Section~\ref{sec:methodology} presents adopted architectural solutions. Section ~\ref{sec:conclusions} contains results, some conclusive remarks and figures future developments.
+The remainder of this document is organized as follows. Section~\ref{sec:related_work} provides an overview of related work. Section~\ref{sec:application} reports about the application user experience. Section~\ref{sec:architecture} presents adopted architectural solutions. Finally, Section ~\ref{sec:conclusions} contains some conclusive remarks.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iffalse
@@ -23,7 +23,7 @@ Questo strumento si propone di realizzare modelli di edifici attraverso l'introd
 
 La natura web ha permesso di sperimentare API per la collaborazione tra utenti remoti, che possono cos\`i progettare un edificio contemporaneamente su pc diversi.
 
-Molta cura \`e stata poi posta sull'espandibilit\`a del sistema, dando agli sviluppatori un elevato livello di personalizzazione. Ci\`o \`e possibile: (i) Sfruttando \textbf{web components pattern} per aggiungere nuove funzionalità; (ii) introducendo un \textbf{catalogo} personalizzabile, in grado di fornire elementi architetturali specifici del contesto in cui l'applicazione viene utilizzata; (iii) introducendo un gestore dinamico di \textbf{metadati}, in grado di 
+Molta cura \`e stata poi posta sull'espandibilit\`a del sistema, dando agli sviluppatori un elevato livello di personalizzazione. Ci\`o \`e possibile: (i) Sfruttando web components pattern per aggiungere nuove funzionalità; (ii) introducendo un catalogo personalizzabile, in grado di fornire elementi architetturali specifici del contesto in cui l'applicazione viene utilizzata; (iii) introducendo un gestore dinamico di \textbf{metadati}, in grado di 
 attribuire informazioni su ogni componente dell'edificio.
 
 Le sezioni che seguono mostrano nel dettaglio i concetti espressi qui, mostrandone la realizzazione e ponendo l'accento sugli aspetti architetturali. In particolare:\\\\

@@ -1,24 +1,27 @@
 \section{Serverless Architecture}\label{sec:architecture}
 
-The architecture 
+According to~\cite{Roberts}, the deployed serverless architecture make extensive use of third parties services, or "\emph{as-a-Service}-like" components, that replace ad-hoc software and hardware and fulfill the same tasks. In particular we have been able to delegate the following aspects to external and specialized services: application distribution, user management, model generation (heavy computation), user collaboration and state storage.
 
-
-l'architettura del sistema Ë serverless nel senso che non necessita la gestione da parte del ... di alcun server.
-
-curare numerosi aspetti, integrando servizi di terze parti "as-a-Service"-like che adempiono e rimpiazzano codice "propietario"/specifico: distribuzione, user management, models generation, users collaboration, state storage
 
 \subsubsection*{Distribution}
+%distribution of the web application => webserver => CDN (Akamai)
 
-distribution of the web application => webserver => CDN (Akamai)
+To serve the application resources (JavaScript files, images, etc.) we rely on a Akamai CDN\footnote{http://AKAMAI-WEBSITE} (Content Delivery Network) and avoid any kind of webserver. This implies high availability and performance, but also represents a centralized method to upgrade client application without any user explicit action: once files have been updated on the CDN, at the subsequent reload of the web application, any user is provided with the updated version of the application.
 
 \subsubsection*{User Management}
-user management => backend => Backend-as-a-Service (Auth0)
+%user management => backend => Backend-as-a-Service (Auth0)
+
+User management activities, which requires a backend running code to accomplish user subscription and authentication, are delegated to Auth0\footnote{http://LINK-TO-AUT0}, a Backend-as-a-Service specialized on accounting.
 
 \subsubsection*{Model Generation}
-3D model generation of heavy building elements => backend => Function-as-a-Service (AWS lambda)
+% 3D model generation of heavy building elements => backend => Function-as-a-Service (AWS lambda)
+
+The generation of 3D models may require a while. In that case, especially on low-performing hardware, the computation can't be performed on the client-side, but rather on a powerful server which generate the model on demand, taking as input the parametrization made by the user through the web interface. On this purpose we chose to move this computation on AWS Lambda\footnote{http://LINK-to-LAMBDA}, a Function-as-a-Service on which runs the Python code responsible to generate 3D models, that automatically scale on the basis of the number of model generation tasks.
 
 \subsubsection*{Users Collaboration}
-users collaboration => backend => Backend-as-a-Service (Firebase)
+% users collaboration => backend => Backend-as-a-Service (Firebase)
+
+As regard the users collaboration, it requires some sort of synchronization among them. To use a single point of syncronization results in a much simpler architecture, so instead of relay on complex peer-to-peer architecture, which however would be a good choice aligned with the serverless paradigm we are pursuing, we opted for a syncronization mechanism based on Firebase\footnote{LINK-TO-FIREBASE}, a Backend-as-a-Service working as a coordination manager. It broadcasts each change made by a user to all the others. Conflicts are avoided exploiting layers: each user lock the layer she is working on.
 
 \subsubsection*{State Storage}
 state storage =>  DB => Orchestrate.io\footnote{https://orchestrate.io} (DA VERIFICARE)
@@ -27,22 +30,20 @@ In particolare, la serializzazione/deserializzazione dello stato completo dell'a
 
 L'architettura software del frontend Ë reactive => gli passo lo stato ottenuto dal server, aggiorna tutta l'interfaccia.
 
-\iffalse
-We used a Serverless Architecture to deploy all the work. L'intero sistema viene distribuito sfruttando sistemi "as-a-Service" come le CDN, BaaS e FaaS, delegando la gestione dell'infrastruttura hardware e di manutenzione ai rispettivi fornitori di servizi.
-\fi
 
-\iffalse
-To offer the application to end-users with high availability and high performance we deployed all Javascript files that are part of the system into a CDN (Content Delivery Network). This single point of deploy offered us a centralized method to upgrade all customers applications without any customer explicit action.
-\fi
 
-To perform CPU intensive operations, necessary to make complex geometric element, we used a third party FaaS system that run Python functions and that generate 3D elements. Thank to this we can scale up and down and adjust the CPU load on the traffic.
 
-The collaboration part is based on a DBaaS, with the common state stored in an external DB provided by Firebase. Following this methodology we could also add user authentication features based on external BaaS providing all user management functionalities.
+
+The collaboration part is based on a DBaaS, with the common state stored in an external DB provided by Firebase. 
 
 The application is distributed as frontend web application and so it's mostly executed into customer's browser. The application state is inside the customer's browser and it is represented as a tree structured object. This state can be serialized and saved on a BaaS system or downloaded as JSON file. The customer can restore the application state in any time using a preceding downloaded serialized version of the state. The system will adjust the user interface and the scene by means of the Virtual DOM and the diff and patch algorithm. Il server quindi si rivela necessario solo nei rari casi in cui l'utente opta per un salvataggio online.
 
 
 L'intero stato dell'applicazione completamente serializzabile come documento permette di eseguire la modellazione 2D all'interno del frontend e di contattare il server solamente per il salvataggio del dato. La serializzazione dello stato come JSON  abilita l'utilizzo di molteplici sistemi per il salvataggio dei dati, in quanto non viene richiesto un backend personalizzato, ma pu√≤ esser utilizzato un qualsiasi DBaaS a patto che supporti il savataggio di JSON. Il progetto √® stato realizzato connettendo i dati tramite Firebase.
+
+
+If on one hand this means that the operation of the system heavily relays su qualcosa che non Ë immediatamente sotto il controllo dell'amministratore di sistema, dall'altra lo sviluppo e la manutenzione Ë estremamente alleggerito
+
 
 %
 % In Figure~\ref{fig_serverless} there is the architectural schema described above\\\\

@@ -298,10 +298,7 @@ Figure~\ref{fig_uc_draw_wall} shows the FSM relative to the wall drawing interac
 
 \subsection{Reactive Component Based UI}
 
-
-The entire application has been developed using separated modules, following the \textbf{SOLID programming} principles, as it could be expanded. For the web part, we have used the \textbf{web components pattern}, with the implementation of \textbf{React.js}\footnote{https://github.com/facebook/react} written by Facebook. The main idea is to define the frontend application as a collection of components, each one rendered in a different way according with values assigned to the state. In Figure~\ref{fig_ui} se can see the user interface of the application with the most interesting components: the toolbar (where every button is another component), the sidebar and the 2D viewer:
-
-we have an example of based on our application.\\
+The UI has been developed following the \emph{Web Components pattern}, supported by \textbf{React.js}\footnote{https://github.com/facebook/react} framework. The main idea is to define the frontend application as a collection of independent components, each one referencing a specific subset of the centralized state and able to render itself according to the actual values of that portion of the state. Figure~\ref{fig_ui} shows main container components of the user interface: the toolbar, the sidebar and the 2D viewer.
 
 \begin{figure}[h]
 \centering

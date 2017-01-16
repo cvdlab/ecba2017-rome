@@ -1,0 +1,36 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{p}{\PYGdefaultZob{}}
+  \PYGdefault{c+c1}{// canvas size}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}width\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+m+mi}{3000}\PYGdefault{p}{,}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}height\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+m+mi}{2000}\PYGdefault{p}{,}
+
+  \PYGdefault{c+c1}{// unit of measurement n}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}unit\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}cm\PYGdefaultZdq{}}\PYGdefault{p}{,}
+
+  \PYGdefault{c+c1}{// current layer}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}selectedLayer\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}layer\PYGdefaultZhy{}1\PYGdefaultZdq{}}\PYGdefault{p}{,}
+
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}layers\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}}
+
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}layer\PYGdefaultZhy{}1\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}name\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}my\PYGdefaultZhy{}layer\PYGdefaultZdq{}}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}id\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}layer\PYGdefaultZhy{}1\PYGdefaultZdq{}}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}altitude\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}opacity\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}visible\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{k+kc}{true}\PYGdefault{p}{,}
+
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}vertices\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{},}
+
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}lines\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{},}
+
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}openings\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{},}
+
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}areas\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{},}
+
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}items\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{},}
+
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}selected\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{}}
+    \PYGdefault{p}{\PYGdefaultZcb{}}
+  \PYGdefault{p}{\PYGdefaultZcb{}}
+\PYGdefault{p}{\PYGdefaultZcb{}}
+\end{Verbatim}

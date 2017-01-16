@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{p}{\PYGdefaultZob{}}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}id\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}Hype99FK88x\PYGdefaultZdq{}}\PYGdefault{p}{,}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}type\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}linear\PYGdefaultZdq{}}\PYGdefault{p}{,}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}prototype\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}lines\PYGdefaultZdq{}}\PYGdefault{p}{,}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}vertices\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{[}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}HJAe59YF8Ux\PYGdefaultZdq{}}\PYGdefault{p}{,}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}r11Z59tKIUg\PYGdefaultZdq{}}
+  \PYGdefault{p}{],}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}openings\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{[}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}r1jaKYUIg\PYGdefaultZdq{}}\PYGdefault{p}{,}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}BJVZ2M9FIIx\PYGdefaultZdq{}}\PYGdefault{p}{,}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}S1\PYGdefaultZhy{}6S5YLUl\PYGdefaultZdq{}}\PYGdefault{p}{,}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}BJ9kIoYUUe\PYGdefaultZdq{}}
+  \PYGdefault{p}{],}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}selected\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{k+kc}{false}\PYGdefault{p}{,}
+  \PYGdefault{l+s+s2}{\PYGdefaultZdq{}properties\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}height\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}length\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+m+mi}{300}
+    \PYGdefault{p}{\PYGdefaultZcb{},}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}thickness\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}length\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+m+mi}{20}
+    \PYGdefault{p}{\PYGdefaultZcb{},}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}textureA\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}bricks\PYGdefaultZdq{}}\PYGdefault{p}{,}
+    \PYGdefault{l+s+s2}{\PYGdefaultZdq{}textureB\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}bricks\PYGdefaultZdq{}}
+ \PYGdefault{p}{\PYGdefaultZcb{}}
+\end{Verbatim}

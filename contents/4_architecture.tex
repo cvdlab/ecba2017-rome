@@ -4,34 +4,34 @@ According to~\cite{Roberts}, the deployed serverless architecture make extensive
 
 
 \subsubsection*{Distribution}
-%distribution of the web application => webserver => CDN (Akamai)
+%distribution of the web application => webserver => CDN (keycdn)
 
-To serve the application resources (JavaScript files, images, etc.) we rely on a Akamai CDN\footnote{\url{http://AKAMAI-WEBSITE}} (Content Delivery Network) and avoid any kind of webserver. This implies high availability and performance, but also represents a centralized method to upgrade client application without any user explicit action: once files have been updated on the CDN, at the subsequent reload of the web application, any user is provided with the updated version of the application.
+To serve the application resources (JavaScript files, images, etc.) we rely on a keycdn CDN\footnote{\url{https://www.keycdn.com/}} (Content Delivery Network) and avoid any kind of webserver. This implies high availability and performance, but also represents a centralized method to upgrade client application without any user explicit action: once files have been updated on the CDN, at the subsequent reload of the web application, any user is provided with the updated version of the application.
 
 \subsubsection*{User Management}
 %user management => backend => Backend-as-a-Service (Auth0)
 
-User management activities, which requires a backend running code to accomplish user subscription and authentication, are delegated to Auth0\footnote{\url{http://LINK-TO-AUT0}}, a Backend-as-a-Service (BaaS) specialized on accounting.
+User management activities, which requires a backend running code to accomplish user subscription and authentication, are delegated to Auth0\footnote{\url{https://auth0.com/}}, a Backend-as-a-Service (BaaS) specialized on accounting.
 
 \subsubsection*{Model Generation}
 % 3D model generation of heavy building elements => backend => Function-as-a-Service (AWS lambda)
 
-The generation of 3D models may require a while. In that case, especially on low-performing hardware, the computation can't be performed on the client-side, but rather on a powerful server which generate the model on demand, taking as input the parametrization made by the user through the web interface. On this purpose we chose to move this computation on AWS Lambda\footnote{\url{http://LINK-to-LAMBDA}}, a Function-as-a-Service (FaaS) on which runs the Python code responsible to generate 3D models, that automatically scale on the basis of the number of model generation tasks.
+The generation of 3D models may require a while. In that case, especially on low-performing hardware, the computation can't be performed on the client-side, but rather on a powerful server which generate the model on demand, taking as input the parametrization made by the user through the web interface. On this purpose we chose to move this computation on AWS Lambda\footnote{\url{https://aws.amazon.com/lambda/}}, a Function-as-a-Service (FaaS) on which runs the Python code responsible to generate 3D models, that automatically scale on the basis of the number of model generation tasks.
 
 \subsubsection*{Users Collaboration}
 % users collaboration => backend => Backend-as-a-Service (Firebase)
 
-As regard the users collaboration, it requires some sort of synchronization among them. To use a single point of synchronization results in a much simpler architecture, so instead of relay on complex peer-to-peer architecture, which however would be a good choice aligned with the serverless paradigm we are pursuing, we opted for a synchronization mechanism based on Firebase\footnote{\url{http://LINK-TO-FIREBASE}}, a Backend-as-a-Service working as a coordination manager. It broadcasts each change made by a user to all the others. Conflicts are avoided exploiting layers: each user lock the layer she is working on.
+As regard the users collaboration, it requires some sort of synchronization among them. To use a single point of synchronization results in a much simpler architecture, so instead of relay on complex peer-to-peer architecture, which however would be a good choice aligned with the serverless paradigm we are pursuing, we opted for a synchronization mechanism based on Firebase\footnote{\url{https://firebase.google.com/}}, a Backend-as-a-Service working as a coordination manager. It broadcasts each change made by a user to all the others. Conflicts are avoided exploiting layers: each user lock the layer she is working on.
 
 \subsubsection*{State Storage}
-% state storage =>  DB => Orchestrate.io\footnote{https://orchestrate.io} 
+% state storage =>  DB => Orchestrate.io\footnote{\url{https://orchestrate.io}}
 
 %\iffalse
-%The whole state of a modeling project is represented as a JSON document. To save and reload project state we relay on a DataBase-as-a-Service (DBaaS), Orchestrate.io\footnote{http://LINK-TO-ORCHESTRATE} specifically. We only exploited endpoints to save and load a document: on a save event,  client application serializes the centralized state and passes it to the DBaaS which store it, ready to serve it on a load request. Once the client receives the document, the state is automatically restored thanks to its reactive architecture.
+%The whole state of a modeling project is represented as a JSON document. To save and reload project state we relay on a DataBase-as-a-Service (DBaaS), Orchestrate\footnote{\url{https://orchestrate.io/}} specifically. We only exploited endpoints to save and load a document: on a save event,  client application serializes the centralized state and passes it to the DBaaS which store it, ready to serve it on a load request. Once the client receives the document, the state is automatically restored thanks to its reactive architecture.
 %Instead of the DBaaS, the user can even download the serialized JSON state on her hard-drive and upload it again at a later time. The focus here is not on the service that actually store the document, which as stated can be replaced even with a file download, but more precisely, on the software architecture that supports serialization and a reloading of the state. This architecture addresses two main concerns: (i) centralized immutable state and (ii) a reactive characterization (i.e. modification of the state reflects automatically on the user interface).
 %\fi
 
-The whole state of a modeling project is represented as a JSON document. To save and reload project state the user can easily downloads the corresponding JSON document, or, to remain ``in the Cloud'', the same document can be stored on a DataBase-as-a-Service (DBaaS), Orchestrate.io\footnote{\url{http://LINK-TO-ORCHESTRATE}} for example. In this case we only relay on endpoints to save and to load a document: on a save event,  client application serializes the state and passes it to the DBaaS which store it, ready to serve it on a load request issued at a later time. Once the client receives back the document, the state is automatically restored thanks to its reactive architecture. 
+The whole state of a modeling project is represented as a JSON document. To save and reload project state the user can easily downloads the corresponding JSON document, or, to remain ``in the Cloud'', the same document can be stored on a DataBase-as-a-Service (DBaaS), Orchestrate\footnote{\url{https://orchestrate.io/}} for example. In this case we only relay on endpoints to save and to load a document: on a save event,  client application serializes the state and passes it to the DBaaS which store it, ready to serve it on a load request issued at a later time. Once the client receives back the document, the state is automatically restored thanks to its reactive architecture.
 
 
 The real support for serverless architecture is here not provided by the service that actually store the document, which as stated can be replaced even with a file download, but more precisely, by the software architecture that supports serialization and a reloading of the state. This architecture addresses two main concerns: (i) centralized immutable state and (ii) a reactive UI (i.e. modifications of the state reflect automatically on the user interface).
@@ -89,7 +89,7 @@ Information redundancies are exploited to decrease access times. Collections of 
         "lines": [],
         "openings": [],
         "areas": [],
-        "items": ["rkKU89U8e"]
+        "objects": ["rkKU89U8e"]
       }
     }
   }
@@ -152,14 +152,10 @@ Information redundancies are exploited to decrease access times. Collections of 
   ],
   "selected": false,
   "properties": {
-    "height": {
-      "length": 300
-    },
-    "thickness": {
-      "length": 20
-    },
-    "textureA": "bricks",
-    "textureB": "bricks"
+    "height": 300,
+    "thickness": 20,
+    "coverA": "bricks",
+    "coverB": "bricks"
  }
 \end{minted}
 \caption{JSON serialized state, {\tt line} structure} 
@@ -266,17 +262,17 @@ Information redundancies are exploited to decrease access times. Collections of 
 
 
 \iffalse
-%\subsubsection*{Unidirectional data flow} The application exploits the \textbf{unidirectional data flow pattern} to gain great benefits in terms of maintainability of the software objects, due to the lightness of the resulting architecture. As requested by the pattern, the software has to be based on a \textbf{centralized state}, which represents the application logic. Consequently, every feature has as its unique goal the obtainment of a new state coherent with the requested change, following various mechanisms based on \textbf{actions} (each one containing the data for the new state) and \textbf{reducers} (software objects that can write the new state) provided by the \textbf{Redux.js}\footnote{http://redux.js.org/} library. Usually, the unidirectional data flow pattern is associated with the \textbf{Immutability pattern}, which contributes to maintainability, avoiding side effects for state changes and providing smaller tests for application logic changes. We also benefits of undo/redo operations to an oldest/newer state by means of a replacement of the current state with the previous/next one. As a consequence, the state can be seen as an \textbf{immutable tree structure} whose changes require: (i) The build of a new state \texttt{s'} equal to the previous state \texttt{s}; (ii) Execution of changes on the new state \texttt{s'}; (iii) Reference replacement from \texttt{s} to \texttt{s'}. Despite its simplicity, this pattern can nevertheless lead to memory waste, so we used the \textbf{Immutable.js}\footnote{https://facebook.github.io/immutable-js/} library (made by facebook), which exploits structural sharing via hash maps tries and vector tries minimizing the need to copy or cache data.
+%\subsubsection*{Unidirectional data flow} The application exploits the \textbf{unidirectional data flow pattern} to gain great benefits in terms of maintainability of the software objects, due to the lightness of the resulting architecture. As requested by the pattern, the software has to be based on a \textbf{centralized state}, which represents the application logic. Consequently, every feature has as its unique goal the obtainment of a new state coherent with the requested change, following various mechanisms based on \textbf{actions} (each one containing the data for the new state) and \textbf{reducers} (software objects that can write the new state) provided by the \textbf{Redux.js}\footnote{\url{http://redux.js.org/}} library. Usually, the unidirectional data flow pattern is associated with the \textbf{Immutability pattern}, which contributes to maintainability, avoiding side effects for state changes and providing smaller tests for application logic changes. We also benefits of undo/redo operations to an oldest/newer state by means of a replacement of the current state with the previous/next one. As a consequence, the state can be seen as an \textbf{immutable tree structure} whose changes require: (i) The build of a new state \texttt{s'} equal to the previous state \texttt{s}; (ii) Execution of changes on the new state \texttt{s'}; (iii) Reference replacement from \texttt{s} to \texttt{s'}. Despite its simplicity, this pattern can nevertheless lead to memory waste, so we used the \textbf{Immutable.js}\footnote{\url{https://facebook.github.io/immutable-js/}} library (made by facebook), which exploits structural sharing via hash maps tries and vector tries minimizing the need to copy or cache data.
 \fi
 
 
 
-\subsubsection*{Unidirectional data flow} The described data structure represents the centralized state required by the \emph{unidirectional data flow pattern}~\cite{CITARE QUALCOSA} exploited by the application via \emph{Redux.js}\footnote{http://redux.js.org/} library. The pattern prescribes that the state may be modified only by specific actors, called \emph{reducers}, whose action is triggered by specific \emph{actions} which contain all the information needed by each reducer to accomplish the state change. Each application feature has to be implemented therefore as a couple of well isolated pieces of code $($ \emph{action} / \emph{reducer} $)$. Preliminary experiments\footnote{\url{https://github.com/cvdlab/walle}} on 2D drawing tools, in fact, highlighted the development complexity of an application of this kind in terms of large internal state modified by several user interactions, which was to be listened to and applied, resulting in a high coupling level between application logic and user interface. In our setup instead we defined a \emph{state engine}, which represents the application logic, comprising actions and reducers, and encapsulates the centralized state. On this layer can transparently relay different interfaces.
+\subsubsection*{Unidirectional data flow} The described data structure represents the centralized state required by the \emph{unidirectional data flow pattern}~\cite{CITARE QUALCOSA} exploited by the application via \emph{Redux.js}\footnote{\url{http://redux.js.org/}} library. The pattern prescribes that the state may be modified only by specific actors, called \emph{reducers}, whose action is triggered by specific \emph{actions} which contain all the information needed by each reducer to accomplish the state change. Each application feature has to be implemented therefore as a couple of well isolated pieces of code $($ \emph{action} / \emph{reducer} $)$. Preliminary experiments\footnote{\url{https://github.com/cvdlab/walle}} on 2D drawing tools, in fact, highlighted the development complexity of an application of this kind in terms of large internal state modified by several user interactions, which was to be listened to and applied, resulting in a high coupling level between application logic and user interface. In our setup instead we defined a \emph{state engine}, which represents the application logic, comprising actions and reducers, and encapsulates the centralized state. On this layer can transparently relay different interfaces.
 
 
 \subsubsection*{Immutability pattern} \emph{Immutability pattern}~\cite{CITARE QUALCOSA} is also applied, to avoid side effects on state changes performed by reducers. The state can be seen as an immutable tree structure whose changes are applied as follows: (i) clone the previous state \texttt{s} obtaining a new state \texttt{s'}; (ii) apply changes on the cloned state \texttt{s'}; (iii) Update reference from \texttt{s} to \texttt{s'}. It is worth noting that this approach provides out-of-the-box support for undo/redo operations: an oldest/newer state can be restored by means of a replacement of the current state with the previous/next one.
 
-Despite its simplicity, this pattern can nevertheless lead to memory waste, due to the several copies of the state that must be held in memory. We addressed this issue using \textbf{Immutable.js}\footnote{https://facebook.github.io/immutable-js/}, a library which exploits structural sharing via hash maps tries and vector tries, thus minimizing the need to copy or cache data.
+Despite its simplicity, this pattern can nevertheless lead to memory waste, due to the several copies of the state that must be held in memory. We addressed this issue using \textbf{Immutable.js}\footnote{\url{https://facebook.github.io/immutable-js/}}, a library which exploits structural sharing via hash maps tries and vector tries, thus minimizing the need to copy or cache data.
 
 
 
@@ -299,7 +295,7 @@ Figure~\ref{fig_uc_draw_wall} shows the FSM relative to the wall drawing interac
 \subsection{Reactive Component Based UI}
 
 
-The entire application has been developed using separated modules, following the \textbf{SOLID programming} principles, as it could be expanded. For the web part, we have used the \textbf{web components pattern}, with the implementation of \textbf{React.js}\footnote{https://github.com/facebook/react} written by Facebook. The main idea is to define the frontend application as a collection of components, each one rendered in a different way according with values assigned to the state. In Figure~\ref{fig_ui} se can see the user interface of the application with the most interesting components: the toolbar (where every button is another component), the sidebar and the 2D viewer:
+The entire application has been developed using separated modules, following the \textbf{SOLID programming} principles, as it could be expanded. For the web part, we have used the \textbf{web components pattern}, with the implementation of \textbf{React.js}\footnote{\url{https://github.com/facebook/react}} written by Facebook. The main idea is to define the frontend application as a collection of components, each one rendered in a different way according with values assigned to the state. In Figure~\ref{fig_ui} se can see the user interface of the application with the most interesting components: the toolbar (where every button is another component), the sidebar and the 2D viewer:
 
 we have an example of based on our application.\\
 
@@ -313,8 +309,8 @@ we have an example of based on our application.\\
 In particular, the most interesting components developed by us are the \textbf{viewers}, for example the 2D-viewer and the 3D-viewer. This component-based structure, allows us to define whatever state definition (for example in a tabular form) simply adding a new component.\\
 
 The viewers structure is outlined in figure~\ref{fig_viewers}, where we can observe the great blocks. The first one is the \textit{catalog} and as we have already seen in section~\ref{building_elements} it contains all the building elements with their properties. We also see the application \textit{core}, which manages the state and contains all drawing functionalities, and can instantiate several different viewers giving them the state for the representation. It communicates with the catalog taking the building models properties. At least we have the \textit{viewers}, that are chosen observing the current state mode (see section~\ref{sec:central_state}). At the moment we implemented the 2D and 3D viewers (see figure~\ref{fig_viewer})\\\\
-\textbf{2D Viewer}. This viewer creates a 2D view of the building model. Given the state, it exploit the \textbf{Virtual DOM} (see~\cite{vdom}) implemented by React.js, to update only changed parts avoiding continuously global updates. All elements are rendered using SVG DOM tag. To perform pan and zoom operations, typically necessary in this kind of tool, we used ReactSVGPanZoom~\footnote{https://github.com/chrvadala/react-svg-pan-zoom} a React component that adds pan and zoom features to SVG and helps to display big SVG images in a small space. It use affine matrix Math and event browser detection to adjust the image size to the required scale.\\\\
-\textbf{3D Viewer}. It exploits the WEBGL-based modeling library \textbf{Three.js}~\footnote{https://threejs.org/} to build a 3D view of our building. To avoid global refreshes every time we update a part of the state, it has been implemented a \texttt{diff} and \textit{patch} system standardized in~\cite{rfc6902}. So it has been implemented a data structure that maps the Three.js objects with the building elements inside the state. Every time the user launches a Redux.js action, the application compute the difference between the old state and the new one a redraw only the changed objects. In particular we can have the following \textit{operations}: (i) \textbf{add}, (ii) \textbf{replace} and (iii) \textbf{remove}. For every operation it is determined a behavior based on the changed building element, changing also related building elements.
+\textbf{2D Viewer}. This viewer creates a 2D view of the building model. Given the state, it exploit the \textbf{Virtual DOM} (see~\cite{vdom}) implemented by React.js, to update only changed parts avoiding continuously global updates. All elements are rendered using SVG DOM tag. To perform pan and zoom operations, typically necessary in this kind of tool, we used ReactSVGPanZoom~\footnote{\url{https://github.com/chrvadala/react-svg-pan-zoom}} a React component that adds pan and zoom features to SVG and helps to display big SVG images in a small space. It use affine matrix Math and event browser detection to adjust the image size to the required scale.\\\\
+\textbf{3D Viewer}. It exploits the WEBGL-based modeling library \textbf{Three.js}\footnote{\url{https://threejs.org/}} to build a 3D view of our building. To avoid global refreshes every time we update a part of the state, it has been implemented a \texttt{diff} and \textit{patch} system standardized in~\cite{rfc6902}. So it has been implemented a data structure that maps the Three.js objects with the building elements inside the state. Every time the user launches a Redux.js action, the application compute the difference between the old state and the new one a redraw only the changed objects. In particular we can have the following \textit{operations}: (i) \textbf{add}, (ii) \textbf{replace} and (iii) \textbf{remove}. For every operation it is determined a behavior based on the changed building element, changing also related building elements.
 
 \begin{figure}[htb]
 \centering

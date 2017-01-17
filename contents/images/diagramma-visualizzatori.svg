@@ -29,9 +29,9 @@
      inkscape:window-height="715"
      id="namedview73"
      showgrid="false"
-     inkscape:zoom="0.72504092"
-     inkscape:cx="183.35768"
-     inkscape:cy="51.075321"
+     inkscape:zoom="1.0253627"
+     inkscape:cx="374.42294"
+     inkscape:cy="137.63303"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -208,13 +208,11 @@
           </xhtml:div>
         </foreignObject>
         <text
-           fill="#000000"
-           font-family="Helvetica"
-           text-anchor="middle"
            id="text44"
            font-size="12px"
            y="12"
-           x="18">CORE</text>
+           x="18"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000">STATE ENGINE</text>
       </switch>
     </g>
     <rect
@@ -368,98 +366,15 @@
       </switch>
     </g>
     <path
-       fill="#000000"
-       stroke="#000000"
-       id="path80"
-       pointer-events="none"
-       stroke-miterlimit="10"
-       d="M 108.59 176.59 L 112.09 183.59 L 108.59 181.84 L 105.09 183.59 Z" />
-    <path
-       fill="none"
-       stroke="#000000"
-       id="path78"
-       pointer-events="none"
-       stroke-miterlimit="10"
-       d="M 339.18 255.47 L 339.18 216.65 L 108.59 216.65 L 108.59 181.84" />
-    <g
-       id="g82"
-       transform="translate(73.376323,216.80741)">
-      <switch
-         id="switch84">
-        <foreignObject
-           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
-           height="12"
-           width="81"
-           pointer-events="all"
-           style="overflow:visible;">
-          <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
-            <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">Plugin instance</xhtml:div>
-          </xhtml:div>
-        </foreignObject>
-        <text
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
-           id="text86"
-           font-size="12px"
-           y="12"
-           x="41">Plugin instance</text>
-      </switch>
-    </g>
-    <path
-       fill="#000000"
-       stroke="#000000"
-       id="path90"
-       pointer-events="none"
-       stroke-miterlimit="10"
-       d="M 268.59 176.59 L 272.09 183.59 L 268.59 181.84 L 265.09 183.59 Z" />
-    <path
-       fill="none"
-       stroke="#000000"
-       id="path88"
-       pointer-events="none"
-       stroke-miterlimit="10"
-       d="M 339.18 255.47 L 339.18 216.65 L 268.59 216.65 L 268.59 181.84" />
-    <g
-       id="g92"
-       transform="translate(228.5,216.80741)">
-      <switch
-         id="switch94">
-        <foreignObject
-           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
-           height="12"
-           width="81"
-           pointer-events="all"
-           style="overflow:visible;">
-          <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
-            <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">Plugin instance</xhtml:div>
-          </xhtml:div>
-        </foreignObject>
-        <text
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
-           id="text96"
-           font-size="12px"
-           y="12"
-           x="41">Plugin instance</text>
-      </switch>
-    </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.98330379;stroke-miterlimit:10"
-       id="path98"
-       pointer-events="none"
-       stroke-miterlimit="10"
-       d="m 339.18,255.47 0,-38.67545 209.41,0 0,-32.51639" />
-    <path
        style="fill:#000000;stroke:#000000;stroke-width:1.07535613;stroke-miterlimit:10"
        id="path100"
        pointer-events="none"
        stroke-miterlimit="10"
-       d="m 548.59,176.67425 3.41575,8.2944 -3.41575,-2.0736 -3.41575,2.0736 z" />
+       d="m 344.75969,254.67557 -3.41575,-8.2944 3.41575,2.0736 3.41575,-2.0736 z"
+       inkscape:connector-curvature="0" />
     <g
        id="g102"
-       transform="translate(506.54947,218.78268)">
+       transform="translate(318.76592,214.97964)">
       <switch
          id="switch104">
         <foreignObject
@@ -479,48 +394,7 @@
            id="text106"
            font-size="12px"
            y="12"
-           x="41">Plugin instance</text>
-      </switch>
-    </g>
-    <path
-       fill="none"
-       stroke="#000000"
-       id="path108"
-       pointer-events="none"
-       stroke-miterlimit="10"
-       d="M 279.18 286.06 L 28.59 286.06 L 28.59 30.76 L 272.81 30.76" />
-    <path
-       fill="#000000"
-       stroke="#000000"
-       id="path110"
-       pointer-events="none"
-       stroke-miterlimit="10"
-       d="M 278.06 30.76 L 271.06 34.26 L 272.81 30.76 L 271.06 27.26 Z" />
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g112"
-       transform="translate(74.644849,11.30568)">
-      <switch
-         style="fill:#000000;fill-opacity:1"
-         id="switch114">
-        <foreignObject
-           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
-           height="12"
-           width="55"
-           pointer-events="all"
-           style="overflow:visible;">
-          <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
-            <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">Properties</xhtml:div>
-          </xhtml:div>
-        </foreignObject>
-        <text
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000;fill-opacity:1"
-           id="text116"
-           font-size="12px"
-           y="12"
-           x="28">Properties</text>
+           x="41">Building elements 2dgf and 3dgf</text>
       </switch>
     </g>
     <rect
@@ -615,5 +489,20 @@
        cx="434.72195"
        cy="149.77922"
        r="6.0954041" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.977;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:0.977,0.977;stroke-dashoffset:0"
+       d="m 107.98677,176.78779 c 0,54.96868 0,55.90034 0,55.90034 l 446.45024,0 0,-56.832 -1.94956,0 0,0 0,0"
+       id="path4209"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:1,1;stroke-dashoffset:0"
+       d="m 267.69778,176.11136 0,55.59009 0.97527,0 0,0"
+       id="path4211"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.9147563;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:0.9147563,0.9147563;stroke-dashoffset:0"
+       d="m 344.86392,231.83968 c 0,18.19602 0,18.19602 0,18.19602 l -1.88856,-2.36247 -0.21096,0.088 1.04976,0"
+       id="path4213"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

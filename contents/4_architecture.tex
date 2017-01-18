@@ -42,6 +42,8 @@ The application state is modeled using the data structure shown in Listing~\ref{
 
 Information redundancies are exploited to decrease access times. Collections of objects are indexed by \texttt{id} thus allowing lookup in constant time, The \texttt{selected} field of each layer, whose contained information is already present in each object,  grants direct access to selected elements, without searching.
 
+The state can be loaded one layer at a time to support state fragmentation thus allowing to deal with very big building modeling project.
+
 \begin{listing}
 \begin{minted}[
                baselinestretch=1,

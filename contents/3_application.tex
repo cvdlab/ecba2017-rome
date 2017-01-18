@@ -26,18 +26,18 @@ The catalog comprises then four different types of elements:\\\\
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\linewidth]{contents/images/fig2d}
+\includegraphics[width=\linewidth]{contents/images/mock-interfaccia}
 \caption{The user interface}
-\label{fig2D}
+\label{figInterface}
 \end{figure}
 
-Figure~\ref{fig2D} show the application user interface. It consists of the following components (from \textit{left} to \textit{right}):
+Figure~\ref{figInterface} shows the application user interface. It consists of the following components:
 
-\textbf{Toolbar:} it contains the button buttons mapping all operations the user can do in that context
+\emph{Content-area}: it displays the main content and it is chosen by the user. Developers can extend the available content-areas and so the functionalities of the system using techniques described in Section~\ref{sec:architecture}. Those which were already implemented by us are: (i) \emph{building elements catalog viewer} (figure~\ref{figCatalogo}), (ii) \emph{2D viewer} (figure~\ref{fig2D}), (iii) \emph{3D viewer} (figures~\ref{fig3D-palace} and~\ref{fig3D}), (iv) \emph{3D first person viewer} (figure~\ref{fig3D-school})
 
-\textbf{Content area}: it displays the main content requested by the user. In figure~\ref{fig2D} the content area shows the 2D drawing area.
+\emph{Toolbar}: it contains buttons mapping all operations the user can do. Type and number of buttons change with regard of the content-area chosen
 
-\textbf{Sidebar:} it contains all elements in the current layer, the layer list and the properties for the selected building element\\
+\emph{Sidebar} it contains the list of building elements added to the current layer and the list of layers of the model. Moreover it permits to change properties values for the selected elements\\
 
 \begin{figure}[htb]
 \centering
@@ -46,14 +46,11 @@ Figure~\ref{fig2D} show the application user interface. It consists of the follo
 \label{figCatalogo}
 \end{figure}
 
-
-Figure~\ref{figCatalogo} shows the building element catalog. When the user select one of the boxes, the application shows the 2D area and starts the interaction for the chosen building element.
-
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\linewidth]{contents/images/3d-school}
-\caption{3D visualization of a school}
-\label{fig3D-school}
+\includegraphics[width=\linewidth]{contents/images/fig-pianta}
+\caption{The 2D viewer}
+\label{fig2D}
 \end{figure}
 
 \begin{figure}[htb]
@@ -63,4 +60,16 @@ Figure~\ref{figCatalogo} shows the building element catalog. When the user selec
 \label{fig3D-palace}
 \end{figure}
 
-Figures~\ref{fig3D-school} and~\ref{fig3D-palace} show some examples of 3D visualizations.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\linewidth]{contents/images/fig-pianta-3d}
+\caption{3D visualization for model in figure~\ref{fig2D}}
+\label{fig3D}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\linewidth]{contents/images/3d-school}
+\caption{3D first person visualization of a school}
+\label{fig3D-school}
+\end{figure}

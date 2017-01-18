@@ -30,8 +30,8 @@
      id="namedview73"
      showgrid="false"
      inkscape:zoom="1.0253627"
-     inkscape:cx="374.42294"
-     inkscape:cy="137.63303"
+     inkscape:cx="296.24621"
+     inkscape:cy="85.950389"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -78,7 +78,7 @@
        d="M 339.18 61.35 L 339.18 86.06 L 268.59 86.06 L 268.59 109.1" />
     <g
        id="g12"
-       transform="translate(254.5,71.457604)">
+       transform="translate(342.27382,67.312729)">
       <switch
          id="switch14">
         <foreignObject
@@ -109,37 +109,12 @@
        stroke-miterlimit="10"
        d="M 108.59 114.35 L 105.09 107.35 L 108.59 109.1 L 112.09 107.35 Z" />
     <path
-       fill="none"
-       stroke="#000000"
        id="path18"
        pointer-events="none"
        stroke-miterlimit="10"
-       d="M 339.18 61.35 L 339.18 86.06 L 108.59 86.06 L 108.59 109.1" />
-    <g
-       id="g22"
-       transform="translate(92.06184,70.969971)">
-      <switch
-         id="switch24">
-        <foreignObject
-           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
-           height="12"
-           width="28"
-           pointer-events="all"
-           style="overflow:visible;">
-          <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
-            <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">State</xhtml:div>
-          </xhtml:div>
-        </foreignObject>
-        <text
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
-           id="text26"
-           font-size="12px"
-           y="12"
-           x="14">State</text>
-      </switch>
-    </g>
+       d="M 339.18 61.35 L 339.18 86.06 L 108.59 86.06 L 108.59 109.1"
+       stroke="#000000"
+       fill="none" />
     <path
        fill="none"
        stroke="#000000"
@@ -154,31 +129,6 @@
        pointer-events="none"
        stroke-miterlimit="10"
        d="M 548.59 114.35 L 545.09 107.35 L 548.59 109.1 L 552.09 107.35 Z" />
-    <g
-       id="g32"
-       transform="translate(534.01237,69.994707)">
-      <switch
-         id="switch34">
-        <foreignObject
-           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
-           height="12"
-           width="28"
-           pointer-events="all"
-           style="overflow:visible;">
-          <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
-            <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">State</xhtml:div>
-          </xhtml:div>
-        </foreignObject>
-        <text
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
-           id="text36"
-           font-size="12px"
-           y="12"
-           x="14">State</text>
-      </switch>
-    </g>
     <rect
        fill="#ffffff"
        stroke="#000000"
@@ -446,32 +396,7 @@
            height="63.392204"
            width="145.31444"
            id="rect4265" /></flowRegion><flowPara
-         id="flowPara4267">Propertiepproepekwo</flowPara></flowRoot>    <g
-       id="g48-3"
-       transform="translate(70.891745,51.588442)">
-      <switch
-         id="switch50-6">
-        <foreignObject
-           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
-           height="12"
-           width="67"
-           pointer-events="all"
-           style="overflow:visible;">
-          <xhtml:div
-             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 67px; white-space: nowrap; word-wrap: normal; text-align: center;">
-            <xhtml:div
-               style="display:inline-block;text-align:inherit;text-decoration:inherit;">2D VIEWER</xhtml:div>
-          </xhtml:div>
-        </foreignObject>
-        <text
-           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#000000"
-           id="text52-7"
-           font-size="12px"
-           y="9.5271835"
-           x="36.01984">VIEWER</text>
-      </switch>
-    </g>
-    <circle
+         id="flowPara4267">Propertiepproepekwo</flowPara></flowRoot>    <circle
        style="opacity:1;fill:#010101;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4202"
        cx="376.69373"

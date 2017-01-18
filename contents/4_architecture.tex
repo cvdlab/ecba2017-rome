@@ -250,7 +250,6 @@ The state can be loaded one layer at a time to support state fragmentation thus 
 \fi
 
 
-
 \subsubsection*{Unidirectional data flow} The described data structure represents the centralized state required by the \emph{unidirectional data flow pattern}~\cite{CITARE QUALCOSA} exploited by the application via \emph{Redux.js}\footnote{\url{http://redux.js.org/}} library. The pattern prescribes that the state may be modified only by specific actors, called \emph{reducers}, whose action is triggered by specific \emph{actions} which contain all the information needed by each reducer to accomplish the state change. Each application feature has to be implemented therefore as a couple of well isolated pieces of code $($ \emph{action} / \emph{reducer} $)$. Preliminary experiments\footnote{\url{https://github.com/cvdlab/walle}} on 2D drawing tools, in fact, highlighted the development complexity of an application of this kind in terms of large internal state modified by several user interactions, which was to be listened to and applied, resulting in a high coupling level between application logic and user interface. In our setup instead we defined a \emph{state engine}, which represents the application logic, comprising actions and reducers, and encapsulates the centralized state. On this layer can transparently relay different interfaces.
 
 
@@ -302,13 +301,4 @@ Figure~\ref{fig_viewers} shows the interaction among viewers, state-engine and c
 \caption{Viewers architectural scheme}
 \label{fig_viewers}
 \end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.45\linewidth]{contents/images/fig-pianta}
-\includegraphics[width=0.45\linewidth]{contents/images/fig-pianta-3d}
-\caption{The 2D and 3D viewers for the state}
-\label{fig_viewer}
-\end{figure}
-
 

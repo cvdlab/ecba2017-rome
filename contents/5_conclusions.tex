@@ -2,16 +2,8 @@
 
 In this work we outlined a serverless architecture to support buildings modeling in a Web environment. The serverless  architecture that gives benefits in terms of availability, reliability, scalability, easiness of deployment, maintainability and upgradability is obtained by implementing the application logic as a client-side only centralized state Web application exploiting the unidirectional data flow pattern. This approach allows for a easy-to-serialize state (in the form of a JSON document) that can be pushed on a third party document oriented DB-as-a-Service and loaded back in the frontend reactive architecture, which transparently reload the state once its serialized version is passed in. The application itself is served by a CDN (Content Delivery Network) thus avoiding any need for web server. Offline routines rely on Function-as-a-Service platform as well as users management and collaboration features.
 
-% COSTI
-% ora siamo gratis
-% less than 100$ for 5000 users
-% exploiting the first paid tier of all services
+\subsubsection*{Services costs} As regards costs to be paid for third party services, we have estimated an expense of less than 100\$ per month for about 5000 users, for the steady state operation. Currently however we have not exceed the free tier offered by each one of the exploited services.
 
-This architecture has been successfully employed by the authors in the \emph{Metior} project~\cite{grapp17}, a tool to support selective deconstruction of buildings in the pursuit of a ``zero waste'' model. 
+\subsubsection*{Meteor project} The described architecture has been successfully employed by the authors as foundation for the \emph{Metior} project~\cite{grapp17}, a tool to support selective deconstruction of buildings in the pursuit of a ``zero waste'' model.  As an outcome of this experience we will be able to gather some usability tests, useful to further improve the user experience.
 
-% test di usabilità
-As an outcome of this project we will gather some 
-
-
-% sviluppi futuri
-frazionamento dello stato per progetti immensi
+\subsubsection*{Future developments} At this stage of development each single layer of the state is required to fit in memory. Although this shortcoming can be easily circumvented by slitting up a big layer, we are currently addressing a practical way to scale also inter-layer, by allowing a selective loading of the layer content.
